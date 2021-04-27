@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+exec find dist \
+  \( \
+    -name '*.css' \
+    -o -name '*.html' \
+    -o -name '*.ico' \
+    -o -name '*.js' \
+    -o -name '*.json' \
+    -o -name '*.svg' \
+    -o -name '*.webmanifest' \
+  \) \
+  -exec echo Compressing {}... \; \
+  -exec brotli -fZ {} \; \
+  -exec gzip -9fk {} \;

@@ -5,6 +5,7 @@ WORKDIR /code
 CMD ["bin/run"]
 
 ENV \
+  WEBSITE_URL='https://dev.pavejs.org' \
   CACHE_CONTROL_MAX_AGE='0' \
   NGINX_VERSION='1.19.7' \
   WATCH='0'

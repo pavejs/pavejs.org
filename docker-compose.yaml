@@ -1,0 +1,38 @@
+version: '0.1'
+
+services:
+  lb:
+    image: nginx:1.19.7-alpine
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./src/nginx.conf:/etc/nginx/nginx.conf
+    - ./src/fullchain.pem:/etc/ssl/private/fullchain.pem
+    - ./src/privkey.pem:/etc/ssl/private/privkey.pem
+    networks:
+      default:
+        aliases:
+        - dev.pavejs.org
+
+  app: &app
+    image: gcr.io/smart-tech-partners/jobtread-app:main
+    environment: &app_environment
+      VERSION: development
+      WATCH: 1
+
+  app-build:
+    <<: *app
+    command: ["true"]
+
+  app-livereload:
+    <<: *app
+    command: ["true"]
+
+  app-test:
+    <<: *app
+    command: ["true"]
+    environment:
+      <<: *app_environment
+      WEBSITE_URL: http://localhost
+      RECAPTCHA_SITE_KEY: ''

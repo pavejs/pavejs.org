@@ -5,11 +5,36 @@ import colors from 'tailwindcss/colors.js';
 const { env } = process;
 
 const MINIFY = env.MINIFY === '1';
+const TEST_INDEX = env.TEST_INDEX === '1';
+const ONLY_ENV = env.ONLY_ENV === '1';
 
-export default {
-  main: {
+const config = {
+  index: {
+    transformers: 'underscore-template',
+    builds: {
+      'src/index.html': {
+        base: 'src',
+        dir: 'dist',
+        ext: { '.html': TEST_INDEX ? '.test.html' : '.html' }
+      }
+    }
+  },
+  nginx: {
+    transformers: 'underscore-template',
+    builds: { 'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' } }
+  }
+};
+
+if (!ONLY_ENV) {
+  config.index.requires = 'main';
+  config.public = {
+    builds: {
+      'src/public/**': { base: 'src/public', dir: 'dist' }
+    }
+  };
+  config.main = {
     transformers: [].concat(
-      { name: 'underscore-template', only: ['src/**/*.+(conf|html)'] },
+      { name: 'json', only: '**/*.json' },
       {
         name: 'babel',
         only: [
@@ -47,13 +72,30 @@ export default {
         }
       },
       {
+        name: 'replace',
+        only: 'node_modules/**/*.js',
+        options: {
+          flags: 'g',
+          patterns: {
+            'process\\.env\\.NODE_ENV': MINIFY
+              ? '"production"'
+              : '"development"'
+          }
+        }
+      },
+      {
+        name: 'concat-commonjs',
+        only: '**/*.+(js|json|svg)',
+        options: { entry: 'src/entry.js' }
+      },
+      {
         name: 'postcss',
         only: 'src/index.css',
         options: {
           plugins: [
             tailwindcss({
               mode: 'jit',
-              purge: ['src/*'],
+              purge: ['src/**/*'],
               theme: {
                 extend: {
                   colors: {
@@ -85,13 +127,20 @@ export default {
       MINIFY ? { name: 'csso', only: 'src/index.css' } : []
     ),
     builds: {
-      'src/**/*': { base: 'src/**/*', dir: 'dist' },
-      'src/**/*.js': {
-        base: 'src/pages',
-        dir: 'dist',
-        ext: { '.js': '.html' }
+      'src/entry.js': {
+        base: 'src',
+        dir: MINIFY ? 'dist/immutable' : 'dist',
+        fingerprint: MINIFY,
+        maxChunkSize: 250_000
       },
-      'src/index.css': { base: 'src', dir: 'dist' }
-    }
-  }
-};
+      'src/index.css': {
+        base: 'src',
+        dir: MINIFY ? 'dist/immutable' : 'dist',
+        fingerprint: MINIFY
+      }
+    },
+    manifestPath: 'dist/manifest.json'
+  };
+}
+
+export default config;

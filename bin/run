@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+ONLY_ENV=1 WATCH=0 bin/build
+
+if [ "$WATCH" = "1" ]; then
+  find dist \( -name '*.br' -o -name '*.gz' \) -exec rm {} \;
+else
+  find dist \
+    -name index.html \
+    -exec echo Compressing {}... \; \
+    -exec brotli -fZ {} \; \
+    -exec gzip -9fk {} \;
+fi
+
+exec nginx
