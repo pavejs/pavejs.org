@@ -16,7 +16,7 @@ services:
         - dev.pavejs.org
 
   app: &app
-    image: gcr.io/smart-tech-partners/jobtread-app:main
+    image: /* Image Name Here */
     environment: &app_environment
       VERSION: development
       WATCH: 1
@@ -35,4 +35,3 @@ services:
     environment:
       <<: *app_environment
       WEBSITE_URL: http://localhost
-      RECAPTCHA_SITE_KEY: ''
