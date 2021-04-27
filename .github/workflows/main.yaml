@@ -1,0 +1,21 @@
+name: main
+on: [push]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    container:
+      image: /*CI IMAGE NAME HERE, EVENTUALLY*/
+    steps:
+    - name: Checkout
+      run: |
+        checkout
+    - name: Build and push
+      run: |
+        docker-login
+        docker-build-and-push --build-arg VERSION=$GITHUB_SHA .
+    - name: Lint
+      run: |
+        docker run --rm $IMAGE_REPO:$GITHUB_SHA bin/lint
+    - name: Test
+      run: |
+        docker-compose --file ci/docker-compose.yaml run --rm app-test
