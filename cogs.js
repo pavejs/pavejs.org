@@ -85,13 +85,13 @@ export default {
       MINIFY ? { name: 'csso', only: 'src/index.css' } : []
     ),
     builds: {
-      'src/**/*': { base: 'src/public', dir: 'public' },
+      'src/**/*': { base: 'src/**/*', dir: 'dist' },
       'src/**/*.js': {
         base: 'src/pages',
-        dir: 'public',
+        dir: 'dist',
         ext: { '.js': '.html' }
       },
-      'src/index.css': { base: 'src', dir: 'public' }
+      'src/index.css': { base: 'src', dir: 'dist' }
     }
   }
 };

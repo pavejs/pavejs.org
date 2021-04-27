@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import loadLivereload from './load-livereload.js';
-import reportWebVitals from './report-web-vitals';
-import Root from './root';
+import loadLivereload from './functions/load-livereload.js';
+import reportWebVitals from './functions/report-web-vitals.js';
+import Root from './root.js';
 
 ReactDOM.render(
   <React.StrictMode>
