@@ -4,7 +4,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: /*CI IMAGE NAME HERE, EVENTUALLY*/
+      image: pavejs/pavejs.org-ci
     steps:
     - name: Checkout
       run: |

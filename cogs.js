@@ -1,3 +1,5 @@
+/* global process:false */
+
 import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 import colors from 'tailwindcss/colors.js';
