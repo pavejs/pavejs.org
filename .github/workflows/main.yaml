@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Checkout
       run: |
-        checkout
+        bin/checkout
     - name: Build and push
       run: |
         docker-login
