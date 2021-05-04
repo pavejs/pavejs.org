@@ -11,8 +11,9 @@ jobs:
     steps:
     - name: Checkout
       run: |
-        ls
-        ${GITHUB_WORKSPACE}/bin/checkout
+        curl -LH "Authorization: token $GITHUB_TOKEN" \
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/tarball/$GITHUB_SHA" | \
+            tar xz --strip-components 1
     - name: Build and push
       run: |
         docker-login
