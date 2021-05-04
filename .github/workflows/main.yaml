@@ -5,17 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: pavejs/pavejs.org-ci
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        IMAGE_REPO: pavejs/pavejs.org-ci
     steps:
     - name: Checkout
       run: |
-        bin/checkout
+        checkout
     - name: Build and push
       run: |
         docker-login
         docker-build-and-push --build-arg VERSION=$GITHUB_SHA .
-    - name: Lint
-      run: |
-        docker run --rm $IMAGE_REPO:$GITHUB_SHA bin/lint
     - name: Test
       run: |
-        docker-compose --file ci/docker-compose.yaml run --rm app-test
+        docker-compose --file ci/docker-compose.yaml run --rm test

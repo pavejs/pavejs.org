@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  test:
+    image: $IMAGE_REPO:$GITHUB_SHA
+    command: ["bin/test"]
+    environment:
+      WEBSITE_URL: http://localhost

@@ -5,7 +5,7 @@ services:
     image: nginx:1.19.7-alpine
     ports:
     - 80:80
-    # - 443:443
+    - 443:443
     volumes:
     - ./src/nginx.dev.conf:/etc/nginx/nginx.conf
     - ./src/fullchain.pem:/etc/ssl/private/fullchain.pem
@@ -15,23 +15,37 @@ services:
         aliases:
         - dev.pavejs.org
 
-  pavejsorg: &pavejsorg
+  web: &pavejsorg
     image: pavejs/pavejs.org-ci
+    volumes:
+      - ../pavejs.org/bin:/code/bin
+      - ../pavejs.org/cogs.js:/code/cogs.js
+      - ../pavejs.org/package-lock.json:/code/package-lock.json
+      - ../pavejs.org/package.json:/code/package.json
+      - ../pavejs.org/src:/code/src
+      - dist:/code/dist
+    build:
+      args:
+        VERSION: development
+      context: ../pavejs.org
     environment: &pavejsorg_environment
       VERSION: development
       WATCH: 1
 
-  pavejsorg-build:
+  build:
     <<: *pavejsorg
     command: ["true"]
 
-  pavejsorg-livereload:
+  livereload:
     <<: *pavejsorg
     command: ["true"]
 
-  pavejsorg-test:
+  test:
     <<: *pavejsorg
     command: ["true"]
     environment:
       <<: *pavejsorg_environment
       WEBSITE_URL: http://localhost
+
+volumes:
+  dist:

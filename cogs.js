@@ -1,94 +1,31 @@
 /* global process:false */
 
 import autoprefixer from 'autoprefixer';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server.js';
 import tailwindcss from 'tailwindcss';
 import colors from 'tailwindcss/colors.js';
 
 const { env } = process;
 
 const MINIFY = env.MINIFY === '1';
-const TEST_INDEX = env.TEST_INDEX === '1';
-const ONLY_ENV = env.ONLY_ENV === '1';
 
-const config = {
-  index: {
-    transformers: 'underscore-template',
-    builds: {
-      'src/index.html': {
-        base: 'src',
-        dir: 'dist',
-        ext: { '.html': TEST_INDEX ? '.test.html' : '.html' }
-      }
-    }
-  },
-  nginx: {
-    transformers: 'underscore-template',
-    builds: { 'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' } }
-  }
-};
-
-if (!ONLY_ENV) {
-  config.index.requires = 'main';
-  config.public = {
-    builds: {
-      'src/public/**': { base: 'src/public', dir: 'dist' }
-    }
-  };
-  config.main = {
+export default {
+  main: {
     transformers: [].concat(
-      { name: 'json', only: '**/*.json' },
+      { name: 'underscore-template', only: ['src/**/*.+(conf|html)'] },
       {
-        name: 'babel',
-        only: [
-          'src/**/*.js',
-          'node_modules/+(formatted-text|pave|yaml)/**/*.js',
-          '**/*.+(json|svg)'
-        ],
-        options: {
-          caller: { name: 'cogs', supportsDynamicImport: true },
-          plugins: [
-            '@babel/plugin-proposal-class-properties',
-            ['babel-plugin-styled-components', { displayName: !MINIFY }]
-          ],
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                targets: {
-                  browsers: [
-                    'last 2 Chrome versions',
-                    'last 2 ChromeAndroid versions',
-                    'last 2 Edge versions',
-                    'last 2 Firefox versions',
-                    'last 2 iOS versions',
-                    'last 2 Safari versions'
-                  ]
-                }
-              }
-            ],
-            [
-              '@babel/preset-react',
-              { development: !MINIFY, runtime: 'automatic' }
-            ]
-          ]
+        only: 'src/public/**/*.js',
+        fn: async ({ file }) => {
+          const { default: Component } = await import(
+            `${file.path}?at=${Math.round(Date.now() / 1000)}`
+          );
+          const html = renderToStaticMarkup(createElement(Component));
+          return {
+            buffer: Buffer.from(`<!doctype html>${html}`),
+            links: ['src/**/*']
+          };
         }
-      },
-      {
-        name: 'replace',
-        only: 'node_modules/**/*.js',
-        options: {
-          flags: 'g',
-          patterns: {
-            'process\\.env\\.NODE_ENV': MINIFY
-              ? '"production"'
-              : '"development"'
-          }
-        }
-      },
-      {
-        name: 'concat-commonjs',
-        only: '**/*.+(js|json|svg)',
-        options: { entry: 'src/entry.js' }
       },
       {
         name: 'postcss',
@@ -97,7 +34,7 @@ if (!ONLY_ENV) {
           plugins: [
             tailwindcss({
               mode: 'jit',
-              purge: ['src/**/*'],
+              purge: ['src/+(components|pages)/**/*'],
               theme: {
                 extend: {
                   colors: {
@@ -129,20 +66,9 @@ if (!ONLY_ENV) {
       MINIFY ? { name: 'csso', only: 'src/index.css' } : []
     ),
     builds: {
-      'src/entry.js': {
-        base: 'src',
-        dir: MINIFY ? 'dist/immutable' : 'dist',
-        fingerprint: MINIFY,
-        maxChunkSize: 250_000
-      },
-      'src/index.css': {
-        base: 'src',
-        dir: MINIFY ? 'dist/immutable' : 'dist',
-        fingerprint: MINIFY
-      }
-    },
-    manifestPath: 'dist/manifest.json'
-  };
-}
-
-export default config;
+      'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
+      'src/public/**/*': { base: 'src/public', dir: 'dist' },
+      'src/index.css': { base: 'src', dir: 'dist' }
+    }
+  }
+};
