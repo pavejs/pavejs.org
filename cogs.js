@@ -34,26 +34,7 @@ export default {
           plugins: [
             tailwindcss({
               mode: 'jit',
-              purge: ['src/+(components|pages)/**/*'],
-              theme: {
-                extend: {
-                  colors: {
-                    cyan: colors.cyan,
-                    orange: {
-                      50: '#ffffb4',
-                      100: '#ffa650',
-                      200: '#ff923c',
-                      300: '#ff7e28',
-                      400: '#ff6a14',
-                      500: '#ff5600',
-                      600: '#eb4200',
-                      700: '#d72e00',
-                      800: '#c31a00',
-                      900: '#af0600'
-                    }
-                  }
-                }
-              }
+              purge: ['src/+(components|pages)/**/*']
             }),
             autoprefixer
           ]
