@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Checkout
       run: |
-        echo ls ${GITHUB_WORKSPACE}
+        ls
         ${GITHUB_WORKSPACE}/bin/checkout
     - name: Build and push
       run: |
