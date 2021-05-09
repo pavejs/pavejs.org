@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+echo "$GCR_IO_PASSWORD" | \
+  docker login -u $GCR_IO_USERNAME --password-stdin gcr.io

@@ -16,13 +16,10 @@ jobs:
         curl -LH "Authorization: token $GITHUB_TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/tarball/$GITHUB_SHA" | \
             tar xz --strip-components 1
-    - name: Login to Docker Hub
-      run: |
-        echo "$DOCKER_HUB_PASSWORD" | \
-        docker login -u $DOCKER_HUB_USERNAME --password-stdin
     - name: Build and push
       run: |
-        docker-build-and-push --build-arg VERSION=$GITHUB_SHA .
+        bin/docker-login
+        bin/docker-build-and-push .
     - name: Test
       run: |
         docker-compose --file ci/docker-compose.yaml run --rm test
