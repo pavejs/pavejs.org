@@ -7,8 +7,8 @@ jobs:
       image: pavejs/pavejs.org-ci
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_PAT }}
-        DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PAT }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         IMAGE_REPO: pavejs/pavejs.org-ci
     steps:
     - name: Checkout

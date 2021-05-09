@@ -52,6 +52,6 @@ ARG VERSION
 RUN test -n "$VERSION"
 ENV VERSION=$VERSION
 
-RUN \
-  MINIFY=1 bin/build && \
-  bin/compress
+# RUN \
+#   MINIFY=1 bin/build && \
+#   bin/compress
