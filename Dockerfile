@@ -38,23 +38,13 @@ RUN \
   rm -fr nginx ngx_brotli ngx_headers_more && \
   apk del --purge tmp
 
-COPY \
-  bin/build \
-  bin/compress \
-  bin/docker-build-and-push \
-  bin/docker-login \
-  bin/kube-login \
-  bin/livereload \
-  bin/run \
-  bin/test \
-  /usr/local/bin/
-
 COPY package-lock.json package.json ./
 RUN \
   npm install && \
   npm cache clean --force && \
   ln -s /code/src node_modules/src
 
+COPY bin bin
 COPY cogs.js ./
 COPY src src
 
