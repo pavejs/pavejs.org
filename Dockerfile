@@ -1,5 +1,11 @@
 FROM node:16.0.0-alpine
 
+RUN \
+  apk add --no-cache curl docker docker-compose jq && \
+  curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl > \
+    /usr/local/bin/kubectl && \
+  chmod +x /usr/local/bin/kubectl
+
 WORKDIR /code
 
 CMD ["bin/run"]
@@ -11,10 +17,6 @@ ENV \
   WATCH='0'
 
 RUN \
-  apk add --no-cache curl docker docker-compose jq && \
-  curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl > \
-    /usr/local/bin/kubectl && \
-  chmod +x /usr/local/bin/kubectl
   apk add --no-cache brotli chromium curl pcre && \
   apk add --no-cache --virtual tmp brotli-dev g++ make pcre-dev zlib-dev && \
   cd /tmp && \
