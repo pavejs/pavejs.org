@@ -4,7 +4,6 @@ import autoprefixer from 'autoprefixer';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server.js';
 import tailwindcss from 'tailwindcss';
-import colors from 'tailwindcss/colors.js';
 
 const { env } = process;
 
@@ -47,7 +46,7 @@ export default {
       MINIFY ? { name: 'csso', only: 'src/index.css' } : []
     ),
     builds: {
-      'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
+      'src/nginx.dev.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
       'src/public/**/*': { base: 'src/public', dir: 'dist' },
       'src/index.css': { base: 'src', dir: 'dist' }
     }
