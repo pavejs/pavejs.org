@@ -46,7 +46,7 @@ export default {
       MINIFY ? { name: 'csso', only: 'src/index.css' } : []
     ),
     builds: {
-      'src/nginx.dev.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
+      'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
       'src/public/**/*': { base: 'src/public', dir: 'dist' },
       'src/index.css': { base: 'src', dir: 'dist' }
     }

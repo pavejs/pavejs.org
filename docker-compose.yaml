@@ -7,8 +7,6 @@ services:
     - 80:80
     volumes:
     - ./src/nginx.conf:/etc/nginx/nginx.conf
-    - ./src/fullchain.pem:/etc/ssl/private/fullchain.pem
-    - ./src/privkey.pem:/etc/ssl/private/privkey.pem
     networks:
       default:
         aliases:
