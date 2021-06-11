@@ -3,10 +3,9 @@ on: [push]
 jobs:
   main:
     runs-on: ubuntu-latest
-    container:
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        IMAGE_REPO: pavejs/pavejs.org
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      IMAGE_REPO: pavejs/pavejs.org
     steps:
     - name: Checkout
       run: |
