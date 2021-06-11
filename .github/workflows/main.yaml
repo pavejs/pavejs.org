@@ -4,22 +4,19 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: pavejs/pavejs.org-ci
+      image: node:16.0.0-alpine
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PAT }}
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        IMAGE_REPO: pavejs/pavejs.org-ci
+        IMAGE_REPO: pavejs/pavejs.org
     steps:
     - name: Checkout
       run: |
         curl -LH "Authorization: token $GITHUB_TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/tarball/$GITHUB_SHA" | \
             tar xz --strip-components 1
-    - name: Build and push
+    - name: Lint
       run: |
-        bin/docker-login
-        bin/docker-build-and-push .
+        docker run --rm $IMAGE_REPO:$GITHUB_SHA bin/lint
     - name: Test
       run: |
         docker-compose --file ci/docker-compose.yaml run --rm test

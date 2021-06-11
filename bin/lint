@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+node_modules/.bin/eslint --color --quiet "$@" cogs.js src
