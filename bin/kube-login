@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-mkdir -p ~/.kube
-echo $KUBE_CONFIG_B64 | base64 -d > ~/.kube/config
