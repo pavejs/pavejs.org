@@ -3,15 +3,22 @@ on: [push]
 jobs:
   main:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      IMAGE_REPO: pavejs/pavejs.org
+    container:
+      image: ubuntu
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        IMAGE_REPO: pavejs/pavejs.org
     steps:
     - name: Checkout
       run: |
         curl -LH "Authorization: token $GITHUB_TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/tarball/$GITHUB_SHA" | \
             tar xz --strip-components 1
+    - name: Docker Login, Build, and Push
+      run: |
+        bin/docker-login-build-and-push
     - name: Lint
       run: |
         docker run --rm $IMAGE_REPO:$GITHUB_SHA bin/lint

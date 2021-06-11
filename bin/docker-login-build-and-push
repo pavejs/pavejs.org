@@ -1,0 +1,24 @@
+#!/bin/sh -e
+
+echo "$DOCKER_PASSWORD" | \
+  docker login -u $DOCKER_USERNAME --password-stdin 
+
+REF=${GITHUB_REF#refs/*/}
+REF=${REF:-$GITHUB_SHA}
+
+docker pull $IMAGE_REPO:$GITHUB_SHA ||
+  docker pull $IMAGE_REPO:$REF ||
+  docker pull $IMAGE_REPO:main ||
+  true
+
+docker build \
+  --cache-from $IMAGE_REPO:$GITHUB_SHA \
+  --cache-from $IMAGE_REPO:$REF \
+  --cache-from $IMAGE_REPO:main \
+  --tag $IMAGE_REPO:$GITHUB_SHA \
+  --tag $IMAGE_REPO:$REF \
+  "$@"
+
+docker push $IMAGE_REPO:$GITHUB_SHA
+
+docker push $IMAGE_REPO:$REF 
