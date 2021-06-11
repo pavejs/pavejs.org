@@ -54,5 +54,4 @@ ENV VERSION=$VERSION
 
 RUN \
   MINIFY=1 bin/build && \
-  bin/compress && \
-  bin/run
+  bin/compress

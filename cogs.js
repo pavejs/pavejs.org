@@ -33,7 +33,7 @@ export default {
           plugins: [
             tailwindcss({
               mode: 'jit',
-              purge: ['src/+(components|pages)/**/*']
+              purge: ['src/+(components|public)/**/*']
             }),
             autoprefixer
           ]

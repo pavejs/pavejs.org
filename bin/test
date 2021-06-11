@@ -5,6 +5,4 @@ while ! curl -fs $WEBSITE_URL >/dev/null 2>&1; do
   sleep 1
 done
 
-curl -fs $WEBSITE_URL/status
-
 kill $(cat /usr/local/nginx/logs/nginx.pid)

@@ -1,14 +1,7 @@
 {
-  "name": "pavejs.org",
-  "version": "0.1.0",
   "private": true,
   "type": "module",
   "dependencies": {
-    "@babel/plugin-syntax-top-level-await": "7",
-    "@babel/preset-react": "7",
-    "@svgr/core": "5",
-    "@svgr/plugin-jsx": "5",
-    "@svgr/plugin-svgo": "5",
     "autoprefixer": "10",
     "classnames": "2",
     "cogs": "4",
@@ -21,5 +14,10 @@
     "react-dom": "^17.0.2",
     "tailwindcss": "2",
     "watchy": "0.9"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "coderiety",
+    "globals": { "global": "readonly", "window": "readonly" }
   }
 }
