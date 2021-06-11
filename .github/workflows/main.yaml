@@ -4,7 +4,6 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: node:16.0.0-alpine
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         IMAGE_REPO: pavejs/pavejs.org
