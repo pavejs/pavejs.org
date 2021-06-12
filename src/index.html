@@ -1,7 +1,6 @@
   
 <%
 const manifest = JSON.parse(await readFile('dist/manifest.json'));
-const config = await readFile('dist/config.js');
 const urlManifest = _.mapObject(manifest, paths =>
   paths.map(path => path.slice('dist'.length))
 );
@@ -19,6 +18,5 @@ const urlManifest = _.mapObject(manifest, paths =>
         window.COGS_MANIFEST = <%= JSON.stringify(urlManifest) %>;
         window.env = <%= JSON.stringify(_.pick(_.pick(process.env, _.identity), 'VERSION', 'WATCH'))%>;
         <% for (const path of manifest['src/entry.js']) print(await readFile(path));%>
-        <% if (config.watch) addScript('/livereload.js?port=443'); %>
     </script>
 </body>

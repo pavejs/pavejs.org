@@ -1,6 +1,4 @@
-const { process } = global;
-
-const { env } = process;
+const { env } = window;
 
 export default {
   version: env.VERSION,

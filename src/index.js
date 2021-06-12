@@ -1,5 +1,5 @@
-import Root from 'src/components/root.js';
+import renderRoot from 'src/functions/render-root.js';
+import startLivereload from 'src/functions/start-livereload.js';
 
-const { document } = window;
-
-export default () => render(<Root />, document.getElementById('root'));
+renderRoot();
+startLivereload();
