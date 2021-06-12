@@ -11,6 +11,9 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         IMAGE_REPO: pavejs/pavejs.org
     steps:
+    - name: Add needed commands
+      run: |
+        apk add curl
     - name: Checkout
       run: |
         curl -LH "Authorization: token $GITHUB_TOKEN" \
