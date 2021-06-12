@@ -1,8 +1,6 @@
 /* global process:false */
 
 import autoprefixer from 'autoprefixer';
-import { createElement } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server.js';
 import tailwindcss from 'tailwindcss';
 
 const { env } = process;
@@ -14,18 +12,50 @@ export default {
     transformers: [].concat(
       { name: 'underscore-template', only: ['src/**/*.+(conf|html)'] },
       {
-        only: 'src/public/**/*.js',
-        fn: async ({ file }) => {
-          const { default: Component } = await import(
-            `${file.path}?at=${Math.round(Date.now() / 1000)}`
-          );
-          const html = renderToStaticMarkup(createElement(Component));
-          return {
-            buffer: Buffer.from(`<!doctype html>${html}`),
-            links: ['src/**/*']
-          };
+        name: 'replace',
+        only: 'node_modules/**/*.js',
+        options: {
+          flags: 'g',
+          patterns: {
+            'process\\.env\\.NODE_ENV': MINIFY
+              ? '"production"'
+              : '"development"'
+          }
         }
       },
+      {
+        name: 'babel',
+        only: ['src/**/*.js'],
+        options: {
+          caller: { name: 'cogs' },
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                corejs: '3.14',
+                targets: 'defaults',
+                useBuiltIns: 'usage'
+              }
+            ],
+            [
+              '@babel/preset-react',
+              { development: !MINIFY, runtime: 'automatic' }
+            ]
+          ]
+        }
+      },
+      {
+        name: 'concat-commonjs',
+        only: '**/*.+(js|json|svg)',
+        options: { entry: 'src/entry.js' }
+      },
+      MINIFY
+        ? {
+            name: 'terser',
+            only: '**/*.+(js|json|svg)',
+            except: '**/*+(-|_|.)min.js'
+          }
+        : [],
       {
         name: 'postcss',
         only: 'src/index.css',
@@ -47,8 +77,10 @@ export default {
     ),
     builds: {
       'src/nginx.conf': { base: 'src', dir: '/usr/local/nginx/conf' },
-      'src/public/**/*': { base: 'src/public', dir: 'dist' },
+      'src/entry.js': { base: 'src', dir: 'dist' },
+      'src/index.html': { base: 'src', dir: 'dist' },
       'src/index.css': { base: 'src', dir: 'dist' }
-    }
+    },
+    manifestPath: 'dist/manifest.json'
   }
 };

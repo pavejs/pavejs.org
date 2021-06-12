@@ -1,7 +1,9 @@
 #!/bin/sh -e
 
+# Alias cogs exec command to CMD var
 CMD='node_modules/.bin/cogs'
 
+# if/else enabling watch or not on cogs and tailwind based on WATCH envvar
 if [ "$WATCH" = "1" ]; then
   TAILWIND_MODE=watch exec $CMD -w 'src/**'
 else

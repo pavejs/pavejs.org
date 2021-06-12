@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+# Use brotli and gzip to compress files within the dist dir ending in ['css', 'html', 'ico', 'js', 'json', 'svg', 'webmanifest']
 exec find dist \
   \( \
     -name '*.css' \

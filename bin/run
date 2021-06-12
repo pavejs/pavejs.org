@@ -12,4 +12,5 @@ else
     -exec gzip -9fk {} \;
 fi
 
+# Initialize nginx server
 exec nginx

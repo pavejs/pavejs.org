@@ -1,0 +1,24 @@
+  
+<%
+const manifest = JSON.parse(await readFile('dist/manifest.json'));
+const config = JSON.parse(await readFile('dist/config.js'));
+const urlManifest = _.mapObject(manifest, paths =>
+  paths.map(path => path.slice('dist'.length))
+);
+%>
+<!doctype html>
+<html class='h-full' />
+<meta charset='utf-8'>
+<link rel='manifest' href='/manifest.webmanifest'>
+<meta name='viewport' content='initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,shrink-to-fit=no,user-scalable=no,viewport-fit=cover,width=device-width'>
+<link rel='stylesheet' href='<%= urlManifest['src/index.css'][0] %>'>
+<title>PaveJS</title>
+<body class='bg-white text-gray-600 text-sm break-words h-full overscroll-y-none'>
+    <div id='root' class='h-full flex flex-col'></div>
+    <script>
+        window.COGS_MANIFEST = <%= JSON.stringify(urlManifest) %>;
+        window.config = <% JSON.stringify(config) %>;
+        <% for (const path of manifest['src/entry.js']) print(await readFile(path));%>
+        <% if (config.watch) addScript('/livereload.js?port=443'); %>
+    </script>
+</body>
