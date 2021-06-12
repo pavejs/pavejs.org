@@ -4,16 +4,13 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu
+      image: alpine
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         IMAGE_REPO: pavejs/pavejs.org
     steps:
-    - name: Add needed commands
-      run: |
-        apk add curl
     - name: Checkout
       run: |
         curl -LH "Authorization: token $GITHUB_TOKEN" \

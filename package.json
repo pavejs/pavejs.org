@@ -26,6 +26,9 @@
   "eslintConfig": {
     "root": true,
     "extends": "coderiety",
-    "globals": { "global": "readonly", "window": "readonly" }
+    "globals": {
+      "global": "readonly",
+      "window": "readonly"
+    }
   }
 }
