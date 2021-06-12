@@ -14,6 +14,7 @@ jobs:
     - name: Add needed commands
       run: |
         apk add curl
+        apk add docker
     - name: Checkout
       run: |
         curl -LH "Authorization: token $GITHUB_TOKEN" \
