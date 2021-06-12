@@ -8,7 +8,7 @@ import Docs from 'src/components/pages/docs.js';
 import About from 'src/components/pages/about.js';
 
 export default () => (
-  <div className='w-full h-full'>
+  <div className='w-full h-full flex flex-col'>
     <Router>
       <Header />
       <Wrapper>

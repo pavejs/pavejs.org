@@ -3,8 +3,10 @@ import PageHeader from 'src/components/page-header.js';
 const FeatureCard = ({ title, imgSrc, text }) => (
     <div className='flex flex-col justify-center space-y-4 p-4'>
         <img src={imgSrc} className='w-2/3 h-auto' />
-        <span className='font-bold text-lg'>{title}</span>
-        <span>{text}</span>
+        <div className='space-y-2 flex flex-col'>
+            <span className='font-bold text-lg'>{title}</span>
+            <span>{text}</span>
+        </div>
     </div>
 );
 

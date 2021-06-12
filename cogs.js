@@ -95,8 +95,8 @@ config.main = {
     MINIFY ? { name: 'csso', only: 'src/index.css' } : []
   ),
   builds: {
-    'src/entry.js': { base: 'src', dir: 'dist' },
-    'src/index.css': { base: 'src', dir: 'dist' }
+    'src/entry.js': { base: 'src', dir: MINIFY ? 'dist/immutable' : 'dist', },
+    'src/index.css': { base: 'src', dir:  MINIFY ? 'dist/immutable' : 'dist', }
   },
   manifestPath: 'dist/manifest.json'
 };
