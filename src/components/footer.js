@@ -7,7 +7,7 @@ const NavExternalLink = classy(Clickable, 'uppercase text-gray-600 font-semibold
 
 export default () => (
   <div className='sticky bottom-0 w-full bg-gray-100 p-6'>
-    <div className='flex items-center max-w-xl mx-auto space-x-8'>
+    <div className='flex items-center max-w-screen-xl mx-auto space-x-8'>
       <Link to='/' className='font-bold text-lg'>[Pave Logo]</Link>
     </div>
   </div>
