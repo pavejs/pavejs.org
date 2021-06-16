@@ -16,6 +16,7 @@
     "cogs-transformer-underscore-template": "2",
     "core-js": "3",
     "eslint-config-coderiety": "2",
+    "feather-icons": "4",
     "livereload": "0.9",
     "pave": "0.10",
     "react": "^17.0.2",

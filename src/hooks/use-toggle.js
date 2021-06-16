@@ -1,6 +1,4 @@
-import { useCallback } from 'react';
-
-import useState from 'src/hooks/use-state.js';
+import { useCallback, useState } from 'react';
 
 export default initial => {
   const [value, setValue] = useState(initial || false);
