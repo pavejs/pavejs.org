@@ -19,11 +19,14 @@ export default () => (
       <Link to='/' className='font-bold text-lg'>
         [Pave Logo]
       </Link>
-      <div className='flex flex-1'>
+      <div className='flex-1 md:flex hidden'>
         <NavLink to='/get-started'>Get Started</NavLink>
         <NavLink to='/docs'>Docs</NavLink>
       </div>
-      <div className='flex'>
+      <div className='md:flex hidden'>
+        <NavExternalLink href='https://www.codepen.com/'>
+          Sandbox
+        </NavExternalLink>
         <NavExternalLink href='https://www.npmjs.com/package/pave'>
           npm
         </NavExternalLink>

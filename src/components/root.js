@@ -13,17 +13,24 @@ export default () => (
       <Header />
       <Wrapper>
         <Switch>
-          <Route path='/about'>
+          <Route sensitive path='/about'>
             <About />
           </Route>
-          <Route path='/docs'>
+          <Route sensitive path='/docs'>
             <Docs />
           </Route>
-          <Route path='/get-started'>
+          <Route sensitive path='/get-started'>
             <Docs />
           </Route>
-          <Route path='/'>
+          <Route sensitive exact strict path='/'>
             <Home />
+          </Route>
+          <Route>
+            <div className='flex flex-col text-lg space-y-2 flex-grow justify-center items-center'>
+              <span className='uppercase font-bold text-4xl'>Not Found</span>
+              The page you were looking for has either been deleted or never
+              existed
+            </div>
           </Route>
         </Switch>
       </Wrapper>

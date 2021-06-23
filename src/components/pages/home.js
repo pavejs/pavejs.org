@@ -19,11 +19,11 @@ export default () => (
         lightweight, simple, and versatile. It achieves this through several
         features, the key of which being
       </div>
-      <div className='grid lg:grid-cols-3 lg:gap-x-4 gap-y-4'>
+      <div className='grid md:grid-cols-3 md:gap-x-4 gap-y-4'>
         <FeatureCard
           title='Feature 1'
           text='Feature 1 text'
-          imgSrc='/images/placeholder'
+          imgSrc='/svgs/globe.svg'
         />
         <FeatureCard
           title='Feature 2'
