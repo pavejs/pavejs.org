@@ -1,14 +1,7 @@
 import PageHeader from 'src/components/page-header.js';
+import classy from 'src/functions/classy.js';
 
-const FeatureCard = ({ title, imgSrc, text }) => (
-  <div className='flex flex-col justify-center space-y-4 p-4'>
-    <img src={imgSrc} className='w-2/3 h-auto' />
-    <div className='space-y-2 flex flex-col'>
-      <span className='font-bold text-lg'>{title}</span>
-      <span>{text}</span>
-    </div>
-  </div>
-);
+const SubHeader = classy('div', 'py-6 text-2xl font-semibold');
 
 export default () => (
   <>
@@ -19,23 +12,48 @@ export default () => (
         lightweight, simple, and versatile. It achieves this through several
         features, the key of which being
       </div>
-      <div className='grid md:grid-cols-3 md:gap-x-4 gap-y-4'>
-        <FeatureCard
-          title='Feature 1'
-          text='Feature 1 text'
-          imgSrc='/svgs/globe.svg'
-        />
-        <FeatureCard
-          title='Feature 2'
-          text='Feature 2 text'
-          imgSrc='/images/placeholder'
-        />
-        <FeatureCard
-          title='Feature 3'
-          text='Feature 3 text'
-          imgSrc='/images/placeholder'
-        />
-      </div>
+      <SubHeader>Why Pave?</SubHeader>
+      <table>
+        <tbody>
+          <tr>
+            <td className='p-4'>
+              <img src={'/svgs/globe.svg'} className='h-24 mx-auto' />
+            </td>
+            <td className='p-4'>
+              <img src={'/svgs/globe.svg'} className='h-24 mx-auto' />
+            </td>
+            <td className='p-4'>
+              <img src={'/svgs/globe.svg'} className='h-24 mx-auto' />
+            </td>
+          </tr>
+          <tr>
+            <td className='text-center space-y-2 p-2'>
+              <div className='font-bold text-lg'>Versatile</div>
+              <div className='leading-relaxed'>
+                Pave doesn&apos;t force you into a box with classes and
+                requirements. It&apos;s a blank slate, where you decide how
+                it&apos;s structured
+              </div>
+            </td>
+            <td className='text-center space-y-2 p-2'>
+              <div className='font-bold text-lg'>Versatile</div>
+              <div className='leading-relaxed'>
+                Pave doesn&apos;t force you into a box with classes and
+                requirements. It&apos;s a blank slate, where you decide how
+                it&apos;s structured
+              </div>
+            </td>
+            <td className='text-center space-y-2 p-2'>
+              <div className='font-bold text-lg'>Versatile</div>
+              <div className='leading-relaxed'>
+                Pave doesn&apos;t force you into a box with classes and
+                requirements. It&apos;s a blank slate, where you decide how
+                it&apos;s structured
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </>
 );

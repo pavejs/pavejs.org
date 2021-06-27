@@ -13,10 +13,10 @@ const urlManifest = _.mapObject(manifest, paths =>
 <link rel='stylesheet' href='<%= urlManifest['src/index.css'][0] %>'>
 <title>PaveJS</title>
 <body class='bg-white text-gray-600 text-sm break-words h-full overscroll-y-none'>
-    <div id='root' class='h-full flex flex-col'></div>
-    <script>
-        window.COGS_MANIFEST = <%= JSON.stringify(urlManifest) %>;
-        window.env = <%= JSON.stringify(_.pick(_.pick(process.env, _.identity), 'VERSION', 'WATCH'))%>;
-        <% for (const path of manifest['src/entry.js']) print(await readFile(path));%>
-    </script>
+  <div id='root' class='h-full flex flex-col'></div>
+  <script>
+    window.COGS_MANIFEST = <%= JSON.stringify(urlManifest) %>;
+    window.env = <%= JSON.stringify(_.pick(_.pick(process.env, _.identity), 'VERSION', 'WATCH'))%>;
+    <% for (const path of manifest['src/entry.js']) print(await readFile(path));%>
+  </script>
 </body>

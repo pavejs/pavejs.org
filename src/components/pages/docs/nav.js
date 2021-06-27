@@ -2,54 +2,11 @@ import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 
 import classy from 'src/functions/classy.js';
+import slugify from 'src/functions/slugify.js';
+import titleize from 'src/functions/titleize.js';
 import useToggle from 'src/hooks/use-toggle.js';
 
 const DELIM = ':';
-
-const DOCUMENTATION_SECTIONS = [
-  {
-    name: 'Introduction',
-    to: 'introduction'
-  },
-  {
-    type: 'group',
-    name: 'Queries',
-    toPrefix: 'queries',
-    children: [
-      {
-        name: 'Arguments',
-        to: 'arguments'
-      },
-      {
-        name: 'Fields',
-        to: 'fields'
-      },
-      {
-        name: 'Aliases',
-        to: 'aliases'
-      }
-    ]
-  },
-  {
-    type: 'group',
-    name: 'Schemas and Types',
-    toPrefix: 'schemas',
-    children: [
-      {
-        name: 'Arguments',
-        to: 'arguments'
-      },
-      {
-        name: 'Fields',
-        to: 'fields'
-      },
-      {
-        name: 'Aliases',
-        to: 'aliases'
-      }
-    ]
-  }
-];
 
 const NavLink = classy(
   Link,
@@ -58,8 +15,9 @@ const NavLink = classy(
 );
 
 const CollapsibleNav = ({
+  objKey,
   obj,
-  obj: { name, children, type, to },
+  obj: { name, children },
   depth = 0,
   parent
 }) => {
@@ -67,11 +25,11 @@ const CollapsibleNav = ({
   return (
     <>
       <NavLink
-        {...(to
+        {...(!children
           ? {
               to: `/docs#${
-                parent?.toPrefix ? `${parent.toPrefix}${DELIM}` : ''
-              }${to}`
+                parent ? `${slugify(parent.key)}${DELIM}` : ''
+              }${slugify(objKey)}`
             }
           : { onClick: toggleExpanded, as: 'div' })}
         className={classNames(
@@ -82,12 +40,12 @@ const CollapsibleNav = ({
             : depth === 3
             ? 'pl-8'
             : '',
-          type === 'group'
+          children
             ? 'text-blue-500 hover:text-blue-600 uppercase font-bold text-sm'
             : 'text-gray-600 text-xs'
         )}
       >
-        <span className='flex-1'>{name}</span>
+        <span className='flex-1'>{name ?? titleize(objKey)}</span>
         {children && (
           <div style={{ width: '1rem', height: '1rem' }}>
             <img
@@ -103,20 +61,26 @@ const CollapsibleNav = ({
       </NavLink>
       {expanded &&
         children &&
-        children.length > 0 &&
-        children.map((child, i) => (
-          <CollapsibleNav key={i} parent={obj} depth={depth + 1} obj={child} />
+        Object.keys(children).length > 0 &&
+        Object.entries(children).map(([key, val], i) => (
+          <CollapsibleNav
+            key={i}
+            parent={{ ...obj, key: objKey }}
+            depth={depth + 1}
+            obj={val}
+            objKey={key}
+          />
         ))}
     </>
   );
 };
 
-export default () => {
+export default ({ schema }) => {
   const location = useLocation();
   return (
     <div className='sticky top-0 lg:right-0 lg:p-4 lg:w-96 h-[min-content] flex flex-col bg-gray-50 rounded shadow border border-gray-200'>
-      {DOCUMENTATION_SECTIONS.map((obj, i) => (
-        <CollapsibleNav key={i} location={location} obj={obj} />
+      {Object.entries(schema).map(([key, obj], i) => (
+        <CollapsibleNav key={i} location={location} objKey={key} obj={obj} />
       ))}
     </div>
   );
