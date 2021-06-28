@@ -1,9 +1,28 @@
 import archive from 'src/archive/index.js';
 import PageHeader from 'src/components/page-header.js';
 import DocumentationNav from 'src/components/pages/docs/nav.js';
+import titleize from 'src/functions/titleize.js';
 // import DocumentationSection from 'src/components/pages/docs/section.js';
 
-const flattenChildren = obj => obj;
+const flattenContent = (obj, depth = 0) => {
+  if (!obj) return null;
+  return Object.entries(obj).reduce(
+    (arr, [objKey, val]) =>
+      arr.concat([
+        <div
+          key={objKey}
+          className='font-semibold'
+          style={{ fontSize: `${-(depth * 5) + 25}px` }}
+        >
+          {titleize(objKey)}
+        </div>,
+        ...(val.content
+          ? [val.content]
+          : flattenContent(val.children, depth + 1) ?? [])
+      ]),
+    []
+  );
+};
 
 export default ({ version }) => {
   const schema = archive[version];
@@ -16,9 +35,11 @@ export default ({ version }) => {
           most lightweight, simple, and versatile data-layer language to date.
           (More content to come)
         </div>
-        {/* {flattenChildren(schema).map(([key, obj], i) => (
-          <CollapsibleNav key={i} location={location} objKey={key} obj={obj} />
-        ))} */}
+        {flattenContent(schema.content).map((content, i) => (
+          <div key={i} className='py-6'>
+            {content}
+          </div>
+        ))}
       </div>
       <DocumentationNav schema={schema.content} />
     </div>

@@ -29,7 +29,7 @@ export default ({ version, setVersion }) => (
         <select
           className='rounded border'
           value={version}
-          onChange={setVersion}
+          onChange={({ target: { value: date } }) => setVersion(date)}
         >
           {Object.keys(versions).map(date => (
             <option key={date} value={date}>
