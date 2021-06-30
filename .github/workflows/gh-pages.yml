@@ -1,4 +1,5 @@
-name: hugo-deploy
+name: github pages
+
 on:
   push:
     branches:
