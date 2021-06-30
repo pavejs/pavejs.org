@@ -1,5 +1,0 @@
-#!/bin/sh -e
-
-# Yes, I felt the need to make this a script on its own
-
-docker-compose up -d

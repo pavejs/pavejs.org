@@ -75,13 +75,10 @@ const CollapsibleNav = ({
   );
 };
 
-export default ({ schema }) => {
-  const location = useLocation();
-  return (
-    <div className='sticky top-0 lg:right-0 lg:p-4 lg:w-96 h-[min-content] flex flex-col bg-gray-50 rounded shadow border border-gray-200'>
-      {Object.entries(schema).map(([key, obj], i) => (
-        <CollapsibleNav key={i} location={location} objKey={key} obj={obj} />
-      ))}
-    </div>
-  );
-};
+export default ({ schema }) => (
+  <div className='sticky top-nav-2 lg:right-0 lg:p-4 lg:w-96 h-[min-content] flex flex-col bg-gray-50 rounded shadow border border-gray-200'>
+    {Object.entries(schema).map(([key, obj], i) => (
+      <CollapsibleNav key={i} location={location} objKey={key} obj={obj} />
+    ))}
+  </div>
+);

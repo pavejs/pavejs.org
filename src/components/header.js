@@ -15,7 +15,7 @@ const NavExternalLink = classy(
 );
 
 export default ({ version, setVersion }) => (
-  <div className='sticky top-0 w-full bg-gray-100'>
+  <div className='fixed top-0 w-full bg-gray-100 shadow'>
     <div className='flex items-center max-w-screen-xl mx-auto space-x-8 px-6'>
       <Link to='/' className='font-bold text-lg'>
         [Pave Logo]

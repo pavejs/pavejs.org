@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-# Call package watchy to keep alive livereload package on dir/dist with a debounce time of 1000
-exec node_modules/.bin/watchy -k -- node_modules/.bin/livereload dist -w 1000

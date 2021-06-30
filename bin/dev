@@ -1,7 +1,0 @@
-#!/bin/sh -e
-
-# A stupid-simple script which essentially just saves having to type docker-compose down then docker-compose build
-
-docker-compose down
-
-docker-compose build --build-arg version="development"

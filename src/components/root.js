@@ -14,7 +14,7 @@ export default () => {
     <div className='w-full h-full flex flex-col'>
       <Router>
         <Header version={version} setVersion={setVersion} />
-        <Wrapper>
+        <Wrapper className='pt-nav'>
           <Switch>
             <Route sensitive path='/about'>
               <About />

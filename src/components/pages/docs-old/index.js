@@ -5,7 +5,7 @@ import titleize from 'src/functions/titleize.js';
 // import DocumentationSection from 'src/components/pages/docs/section.js';
 
 const flattenContent = (obj, depth = 0) => {
-  if (!obj) return null;
+  if (!obj) return [];
   return Object.entries(obj).reduce(
     (arr, [objKey, val]) =>
       arr.concat([
@@ -16,9 +16,7 @@ const flattenContent = (obj, depth = 0) => {
         >
           {titleize(objKey)}
         </div>,
-        ...(val.content
-          ? [val.content]
-          : flattenContent(val.children, depth + 1) ?? [])
+        ...[val.content, flattenContent(val.children, depth + 1) ?? []]
       ]),
     []
   );
