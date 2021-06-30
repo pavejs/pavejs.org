@@ -1,0 +1,47 @@
+languageCode:           "en"
+title:                  "PaveJS"
+baseURL:                "https://pavejs.org"
+enableInlineShortcodes: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe:           true
+  highlight:
+    noClasses:          false
+  tableOfContents:
+    startLevel:         2
+    endLevel:           6
+
+buildDrafts:            true
+buildFuture:            true
+
+enableRobotsTXT:        true
+metaDataFormat:         "yaml"
+disableKinds:           ["404"]
+
+publishDir:             "_site"
+
+module:
+  mounts:
+    - source:           site/assets
+      target:           assets
+    - source:           site/content
+      target:           content
+    - source:           site/data
+      target:           data
+    - source:           site/layouts
+      target:           layouts
+    - source:           site/static
+      target:           static
+
+params:
+  description:          "The best data layer language in the world."
+  authors:              "Casey Foster, Nathaniel Pendy"
+
+  current_version:      "5.0.2"
+  current_ruby_version: "5.0.2"
+  docs_version:         "1.0"
+  rfs_version:          "9.0.3"
+  repo:                 "https://github.com/caseywebdev/pave"
+  npm:                  "https://npmjs.com/pave"
