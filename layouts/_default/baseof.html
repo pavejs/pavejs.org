@@ -6,13 +6,10 @@
   </head>
   {{ block "body_override" . }}<body>{{ end }}
 
-    {{ partial "docs-navbar" . }}
-
     {{ block "main" . }}
     {{ end }}
 
     {{ partial "footer" . }}
-    {{ partial "scripts" . }}
 
     {{ block "footer" . }}
     {{ end }}
