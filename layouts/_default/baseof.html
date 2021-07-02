@@ -6,7 +6,7 @@
   </head>
   <body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none'>
     {{ partial "nav" . }}
-    <div className='w-full h-full flex-1 flex flex-col'>
+    <div class='w-full h-full flex-1 flex flex-col p-safe pt-nav'>
       {{ block "main" . }}{{ end }}
     </div>
     {{ partial "footer" . }}

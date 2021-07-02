@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .pt-nav {
+      padding-top: calc(env(safe-area-inset-top, 0px) + 4.25rem);
+    }
+
+    .pt-safe {
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    
+    .pl-safe {
+      padding-left: env(safe-area-inset-left, 0px);
+    }
+    
+    .pr-safe {
+      padding-right: env(safe-area-inset-right, 0px);
+    }
+}
+
+@layer components {
+    .inset-safe {
+      @apply top-safe right-safe bottom-safe left-safe;
+    }
+  
+    .inset-scrollbar {
+      @apply top-0 right-scrollbar bottom-0 left-0;
+    }
+  
+    .inset-scrollbar-safe {
+      @apply top-safe right-scrollbar-safe bottom-safe left-safe;
+    }
+  
+    .p-safe {
+      @apply pt-safe pb-safe pl-safe pr-safe;
+    }
+  
+    .p-scrollbar-safe {
+      @apply pt-safe pb-safe pl-safe pr-scrollbar-safe;
+    }
+}
+  
+*:focus {
+    outline: 0;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
