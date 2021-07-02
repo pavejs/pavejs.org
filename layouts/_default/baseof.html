@@ -4,9 +4,9 @@
   <head>
     {{ partial "header" . }}
   </head>
-  {{ block "body_override" . }}<body>{{ end }}
+  <body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none'>
     {{ partial "nav" . }}
-    
+
     {{ block "main" . }}
     {{ end }}
 
