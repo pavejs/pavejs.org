@@ -2,7 +2,7 @@
   {{- $url := split .Permalink "/" -}}
   {{- $page_slug := index $url (sub (len $url) 2) -}}
   <ul class="list-none mb-0 py-3 md:pt-1">
-  {{- range $group := .Site.Data.docs-sidebar -}}
+  {{- range $group := .Site.Data "docs-sidebar" -}}
     {{- $link := $group.title -}}
     {{- $link_slug := $link | urlize -}}
     {{- if $group.content -}}
