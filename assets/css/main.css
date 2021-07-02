@@ -22,21 +22,13 @@
     .pr-safe {
       padding-right: env(safe-area-inset-right, 0px);
     }
+
+    .pr-scrollbar-safe {
+        padding-right: calc(env(safe-area-inset-right, 0px) + var(--scrollbar-offset, 0px));
+    }
 }
 
 @layer components {
-    .inset-safe {
-      @apply top-safe right-safe bottom-safe left-safe;
-    }
-  
-    .inset-scrollbar {
-      @apply top-0 right-scrollbar bottom-0 left-0;
-    }
-  
-    .inset-scrollbar-safe {
-      @apply top-safe right-scrollbar-safe bottom-safe left-safe;
-    }
-  
     .p-safe {
       @apply pt-safe pb-safe pl-safe pr-safe;
     }
