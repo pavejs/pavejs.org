@@ -4,9 +4,9 @@
   <head>
     {{ partial "header" . }}
   </head>
-  <body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none'>
+  <body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none justify-center'>
     {{ partial "nav" . }}
-    <div class='w-full h-full flex-1 flex flex-col p-safe pt-nav'>
+    <div class='h-full flex-1 flex flex-col p-safe pt-nav max-w-screen-xl'>
       {{ block "main" . }}{{ end }}
     </div>
     {{ partial "footer" . }}

@@ -7,5 +7,9 @@ aliases:
   - "/docs/getting-started/introduction"
   - "/docs/getting-started/"
   - "/getting-started/"
-toc: true
+tableOfContents: true
 ---
+
+## Header
+
+Content
