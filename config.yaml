@@ -24,9 +24,6 @@ params:
   description:          "The best data layer language in the world."
   authors:              "Casey Foster, Nathaniel Pendy"
 
-  current_version:      "5.0.2"
-  current_ruby_version: "5.0.2"
   docs_version:         "1.0"
-  rfs_version:          "9.0.3"
   repo:                 "https://github.com/caseywebdev/pave"
   npm:                  "https://npmjs.com/pave"
