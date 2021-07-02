@@ -5,10 +5,9 @@
     {{ partial "header" . }}
   </head>
   {{ block "body_override" . }}<body>{{ end }}
-
-    {{ block "main" . }}
-
     {{ partial "nav" . }}
+    
+    {{ block "main" . }}
     {{ end }}
 
     {{ partial "footer" . }}
