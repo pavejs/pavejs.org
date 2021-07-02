@@ -1,8 +1,6 @@
 <div class='fixed top-0 w-full bg-gray-100 shadow'>
     <div class='flex items-center max-w-screen-xl mx-auto space-x-8 px-6'>
-      <Link to='/' class='font-bold text-lg'>
-        [Pave Logo]
-      </Link>
+      {{ partial "logo" . }}
       <div class='flex-1 md:flex hidden'>
         <a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href='/get-started'>Get Started</a>
         <a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href='/docs'>Docs</a>
