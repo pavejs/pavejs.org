@@ -1,7 +1,9 @@
+const DIR_NAME = __dirname + '/../../'
+
 module.exports = {    
   plugins: [   
-    require('postcss-import')({ path: [__dirname] }), 
-    require('tailwindcss')(__dirname + 'assets/css/tailwind.config.js'),
-    require('autoprefixer')({ path: [__dirname] }),
+    require('postcss-import')({ path: [DIR_NAME] }), 
+    require('tailwindcss')(DIR_NAME + 'assets/css/tailwind.config.js'),
+    require('autoprefixer')({ path: [DIR_NAME] }),
   ]
 }
