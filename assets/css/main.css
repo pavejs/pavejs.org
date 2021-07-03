@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+    .top-nav {
+      top: calc(env(safe-area-inset-top, 0px) + 4.25rem);
+    }
+
     .pt-nav {
       padding-top: calc(env(safe-area-inset-top, 0px) + 4.25rem);
     }
