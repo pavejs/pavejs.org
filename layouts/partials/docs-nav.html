@@ -23,7 +23,7 @@
               {{- $section_slug := $section.title | urlize -}}
               {{- $is_active := and $is_active_group (eq $page_slug $section_slug) -}}
               {{- $href := printf "/docs/%s/%s/%s/" $group_slug $section_slug }}
-              <li class="flex w-full"><a href="{{ $href }}" class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 whitespace-nowrap p-3 pl-6 text-gray-600 text-xs{{ if $is_active }} text-gray-800{{ end }}">
+              <li class="flex w-full"><a href="{{ $href }}" class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 whitespace-nowrap p-1 pl-6 text-gray-600 text-xs{{ if $is_active }} text-gray-800{{ end }}">
                 {{ $section.title }}
               </a></li>
             {{- end }}
