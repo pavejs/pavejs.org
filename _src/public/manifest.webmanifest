@@ -1,9 +1,0 @@
-{
-  "background_color": "#fff",
-  "display": "standalone",
-  "name": "PaveJS",
-  "scope": "/",
-  "short_name": "PaveJS",
-  "start_url": "/",
-  "theme_color": "#fff"
-}
