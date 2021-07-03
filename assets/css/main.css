@@ -7,6 +7,14 @@
       top: calc(env(safe-area-inset-top, 0px) + 4.25rem);
     }
 
+    .top-nav-2 {
+      top: calc(env(safe-area-inset-top, 0px) + 5.25rem);
+    }
+
+    .h-min {
+      height: min-content;
+    }
+
     .pt-nav {
       padding-top: calc(env(safe-area-inset-top, 0px) + 4.25rem);
     }
