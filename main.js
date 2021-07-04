@@ -1,7 +1,7 @@
 (() => {
   // <stdin>
   window.onload = () => {
-    const navGroups = querySelectorAll(".nav-group");
+    const navGroups = document.querySelectorAll(".nav-group");
     navGroups.forEach((el) => {
       const controls = document.getElementById(el.dataset.controls);
       el.addEventListener("click", () => {
