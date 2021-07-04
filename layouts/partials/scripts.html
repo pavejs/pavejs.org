@@ -1,7 +1,3 @@
-{{- $js := resources.Match "js/*.js" -}}
+{{ $built := resources.Get "js/index.js" | js.Build "main.js" }}
 
-{{- if eq hugo.Environment "production" -}}
-  {{- $js = $js | resources.Minify -}}
-{{- end }}
-
-<script src="{{ $js.Permalink | relURL }}"></script>
+<script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
