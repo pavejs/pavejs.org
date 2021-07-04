@@ -20,6 +20,11 @@ enableRobotsTXT:        true
 metaDataFormat:         "yaml"
 disableKinds:           ["404"]
 
+module:
+  mounts:
+    - source: "node_modules/bootstrap-icons/icons"
+      target: "static/svgs"
+
 params:
   description:          "The best data layer language in the world."
   authors:              "Casey Foster, Nathaniel Pendy"
