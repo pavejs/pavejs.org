@@ -17,7 +17,7 @@
           <span>{{ $group.title }}</span>
           <img src='/svgs/chevron-right.svg' class="transition-all h-3 w-3 transform{{ if $is_active_group }} rotate-90{{ else }} rotate-0{{ end }}" />
         </button>
-        <div id="#{{ $group_slug }}-content" class="w-full{{ if $is_active_group }} flex{{ else }} hidden{{ end }}">
+        <div id="{{ $group_slug }}-content" class="w-full{{ if $is_active_group }} flex{{ else }} hidden{{ end }}">
           <ul class="list-none flex flex-1 flex-col text-base">
             {{- range $section := $group.content -}}
               {{- $section_slug := $section.title | urlize -}}
