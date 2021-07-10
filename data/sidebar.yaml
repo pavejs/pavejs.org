@@ -2,7 +2,7 @@
   content:
     - title: Introduction
 
-- title: Queries and Mutations
+- title: Queries
   content:
     - title: Fields
     - title: Arguments

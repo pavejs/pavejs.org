@@ -2,9 +2,9 @@
 layout: docs
 title: Variables
 description: Learn about Pave Variables
-group: queries-and-migrations
+group: queries
 aliases:
-  - "/docs/queries-and-migrations/variables"
+  - "/docs/queries/variables"
 tableOfContents: true
 ---
 

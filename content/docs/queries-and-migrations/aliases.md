@@ -2,9 +2,9 @@
 layout: docs
 title: Aliases
 description: Learn about Pave Aliases
-group: queries-and-migrations
+group: queries
 aliases:
-  - "/docs/queries-and-migrations/aliases"
+  - "/docs/queries/aliases"
 tableOfContents: true
 ---
 

@@ -2,9 +2,9 @@
 layout: docs
 title: Fields
 description: Learn about Pave Fields
-group: queries-and-migrations
+group: queries
 aliases:
-  - "/docs/queries-and-migrations/fields"
+  - "/docs/queries/fields"
 tableOfContents: true
 ---
 
