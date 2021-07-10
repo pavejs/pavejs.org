@@ -1,17 +1,21 @@
 {{ define "main" }}
 <div class='h-full flex-1 flex flex-col w-full max-w-screen-xl'>
-  <div class='w-full h-full flex p-4'>
+  <div class='w-full h-full flex p-4 space-x-5'>
     <main class="flex flex-col md:space-x-4 md:flex-row w-3/4">
       {{ if (eq .Page.Params.tableOfContents true) }}
         <div class="py-5 md:py-0 lg:pb-5 text-gray-400 p-4 space-y-2">
           <strong class="block text-lg pb-2 border-b">On this page</strong>
-          {{ .TableOfContents }}
+          <nav class="table-of-contents">
+            {{ .TableOfContents }}
+          </nav>
         </div>
       {{ end }}
-      <div class="flex flex-col flex-1 space-y-4">
-        <span class="text-4xl font-bold pb-2">{{ .Title | markdownify }}</span>
+      <div class="flex flex-col flex-1 space-y-2">
+        <span class="text-4xl font-bold">{{ .Title | markdownify }}</span>
         <p class="text-2xl font-light">{{ .Page.Params.Description | markdownify }}</p>
+        <hr class="pt-2" />
         {{ .Content }}
+        <div class="h-72"></div>
       </div>
     </main>
     <aside class="lg:right-0 sticky top-nav-2 w-1/4 h-min flex flex-col bg-gray-50 rounded shadow border border-gray-200">

@@ -13,17 +13,16 @@
     {{- $is_active_group := eq $.Page.Params.group $group_slug -}}
     {{- if $group.content }}
       <li class="flex flex-col w-full">
-        <button data-controls="{{ $group_slug }}-content" class="nav-group w-full inline-flex items-center flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:bg-gray-200 whitespace-nowrap p-3 text-blue-500 hover:text-blue-600 uppercase font-bold text-sm{{ if not $is_active_group }} collapsed{{ end }}">
-          <span>{{ $group.title }}</span>
-          <img id="{{ $group_slug }}-indicator" src='/svgs/chevron-right.svg' class="transition-all h-3 w-3 transform{{ if $is_active_group }} rotate-90{{ else }} rotate-0{{ end }}" />
-        </button>
-        <div id="{{ $group_slug }}-content" class="w-full{{ if $is_active_group }} flex{{ else }} hidden{{ end }}">
+        <div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 font-semibold whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
+          {{ $group.title }}
+        </div>
+        <div lass="w-full flex">
           <ul class="list-none flex flex-1 flex-col text-base">
             {{- range $section := $group.content -}}
               {{- $section_slug := $section.title | urlize -}}
               {{- $is_active := and $is_active_group (eq $page_slug $section_slug) -}}
-              {{- $href := printf "/docs/%s/%s/%s/" $group_slug $section_slug }}
-              <li class="flex w-full"><a href="{{ $href }}" class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 whitespace-nowrap p-1 pl-6 text-gray-600 text-xs{{ if $is_active }} text-gray-800{{ end }}">
+              {{- $href := printf "/docs/%s/%s/" $group_slug $section_slug }}
+              <li class="flex w-full"><a href="{{ $href }}" class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-600 text-xs{{ if $is_active }} text-gray-800{{ end }}">
                 {{ $section.title }}
               </a></li>
             {{- end }}
