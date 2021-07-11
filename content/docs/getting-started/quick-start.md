@@ -35,7 +35,7 @@ The cornerstore of any querying language is a rigid schema by which your project
 
 The first step is to define your basic scalar types. We have attempted to make this easier by providing a package which includes a lot of the run-of-the-mill scalar types you will want for your project. This package can be included in your project in much the same way as Pave itself; <strong class="py-1 px-2 bg-gray-100 rounded">"pave-basic-types": "1"</strong>
 
-This package, when spread inside of your **/schema/index.js**, as shown below, will provide these basic types, referenced below.
+This package, when spread inside of your root schema file, as shown below, will provide these 8 basic types; string, int, date, datetime, time, number, object, boolean.
 
 As far as these basic types go, it's up to you as to whether or not you selectively pick and choose which types to use, or whether you just want to use all of them, examples of both are shown below.
 

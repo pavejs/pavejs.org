@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Arguments
-description: Learn about Pave Arguments
+description: Provide information to your query
 group: queries
 aliases:
   - "/docs/queries/arguments"

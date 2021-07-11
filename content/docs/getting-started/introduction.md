@@ -32,11 +32,11 @@ To get a better understanding of the key differences between Pave and other quer
 <div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
 <pre>
 query: {
-    user: {
-      _args: { id: 123 }
-      id: {},
-      name: {}
-    }
+  user: {
+    _args: { id: 123 }
+    id: {},
+    name: {}
+  }
 }</pre>
 </div>
 

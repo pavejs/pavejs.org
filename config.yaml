@@ -26,7 +26,7 @@ module:
       target: "static/svgs"
 
 params:
-  description:          "The best data layer language in the world."
+  description:          "The best querying language in the world."
   authors:              "Casey Foster, Nathaniel Pendy"
 
   docs_version:         "1.0"
