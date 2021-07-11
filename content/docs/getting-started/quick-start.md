@@ -16,7 +16,7 @@ This guide will walk you through getting Pave setup and working in your project
 
 Getting pave setup and running your environment is easy and painless. Naturally, the first step of setup is to install Pave by declaring it in your package.json file in your project, as shown below.
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 <span class='text-green-500'>// In your projects package.json</span>
 {
@@ -41,7 +41,7 @@ As far as these basic types go, it's up to you as to whether or not you selectiv
 
 #### All
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 import basicTypes from 'pave-basic-types';<br/>
 export default {
@@ -53,7 +53,7 @@ export default {
 
 #### Selective
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 import { string, number, object } from 'pave-basic-types';<br/>
 export default {

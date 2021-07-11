@@ -29,7 +29,7 @@ To get a better understanding of the key differences between Pave and other quer
 
 #### Client side
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 query: {
   user: {
@@ -45,7 +45,7 @@ The key to be noticed above, is that the entire query is represented in Plain Ol
 
 #### Server side
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 export default {
   type: 'user',

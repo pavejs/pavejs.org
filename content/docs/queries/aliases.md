@@ -12,7 +12,7 @@ tableOfContents: true
 
 Because of the POJO nature of Pave, the only requirements to alias fields is simply another key on a query object. When provided, Pave will take that as the name of the queried type, as demonstrated below.
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 <span class='text-green-500'>// Query user, but with an alias</span>
 query: {
@@ -32,7 +32,7 @@ This is particularly useful in cases where you need to query the same field twic
 
 #### Invalid Example
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 query: {
   createUser: { 
@@ -52,7 +52,7 @@ This same example could be requested successfully, by employing the help of alia
 
 #### Valid Example
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3">
+<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
 <pre>
 query: {
   createUserA: { 
