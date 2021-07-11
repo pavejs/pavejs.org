@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Fields
-description: Learn about Pave Fields
+description: The core concept of any querying language
 group: queries
 aliases:
   - "/docs/queries/fields"
