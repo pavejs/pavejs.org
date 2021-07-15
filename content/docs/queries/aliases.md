@@ -12,9 +12,8 @@ tableOfContents: true
 
 Because of the POJO nature of Pave, the only requirements to alias fields is simply another key on a query object. When provided, Pave will take that as the name of the queried type, as demonstrated below.
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-<span class='text-green-500'>// Query user, but with an alias</span>
+```js
+// Query user, but with an alias
 query: {
   myModelNameHere: { 
     _field: 'user'
@@ -22,8 +21,8 @@ query: {
     id: {},
     name: {}
   }
-}</pre>
-</div>
+}
+```
 <br><br>
 
 ### Application
@@ -32,8 +31,7 @@ This is particularly useful in cases where you need to query the same field twic
 
 #### Invalid Example
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
+```js
 query: {
   createUser: { 
     _args: { 
@@ -45,15 +43,14 @@ query: {
       name: 'Jane Doe',
     }
   }
-}</pre>
-</div>
+}
+```
 
 This same example could be requested successfully, by employing the help of aliases.
 
 #### Valid Example
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
+```js
 query: {
   createUserA: { 
     _field: 'createUser',
@@ -67,5 +64,5 @@ query: {
       name: 'Jane Doe',
     }
   }
-}</pre>
-</div>
+}
+```

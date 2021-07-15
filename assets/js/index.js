@@ -1,24 +1,41 @@
-const focusSearch = () => {
-    const el = document.getElementById('docs-search');
-    el.focus();
-    scrollTo(0);
-}
+/* global anchors: false */
 
-const BINDS = [
-    { keys: ['Ctrl', '/'], fn: focusSearch }
-]
+(function () {
+    'use strict'
+  
+    // WIP anchors, want to use AnchorJS instead of hugo anchors for customizability
+    // anchors.options = {
+    //     icon: '#'
+    // }
 
-window.onload = () => {
-    const pressedKeys = new Set();
-    const watchedKeyGroups = BINDS.map(({ keys }) => keys);
-    const watchedKeys = watchedKeyGroups.flat();
+    // anchors.add('.content > h2, .content > h3, .content > h4, .content > h5')
 
-    document.addEventListener('keydown', e => (watchedKeys.indexOf(e.key) !== -1) && pressedKeys.add(e.key));
-    document.addEventListener('keyup', e => (watchedKeys.indexOf(e.key) !== -1) && pressedKeys.delete(e.key));
+    const focusSearch = () => {
+        const el = document.getElementById('docs-search');
+        el.focus();
+        window.scrollTo(0,0);
+    }
 
-    watchedKeyGroups.map(keyArr => {
-        keyArr.forEach(i => {
-            // check all keys are pressed here, then get fn
+    // Define keybinds and their fns
+    const BINDS = [
+        { keys: ['Control', '/'], fn: focusSearch }
+    ];
+
+    window.onload = () => {
+        const pressedKeys = new Set();
+        const watchedKeys = BINDS.map(({ keys }) => keys).flat();
+
+        const check = () => BINDS.map(({ keys, fn }) => {
+            if(keys.length !== pressedKeys.size) return;
+            if(!keys.every(key => pressedKeys.has(key))) return;
+            return fn();
         });
-    });
-}
+
+        document.addEventListener('keydown', e => {
+            if (watchedKeys.indexOf(e.key) !== -1) pressedKeys.add(e.key) && check();
+        });
+        document.addEventListener('keyup', e => {
+            if (watchedKeys.indexOf(e.key) !== -1) pressedKeys.delete(e.key) && check();
+        });
+    }
+})()

@@ -16,24 +16,23 @@ This guide will walk you through getting Pave setup and working in your project
 
 Getting pave setup and running your environment is easy and painless. Naturally, the first step of setup is to install Pave by declaring it in your package.json file in your project, as shown below.
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-<span class='text-green-500'>// In your projects package.json</span>
+```js
+// In your projects package.json
 {
   ...
   "dependencies": {
     "pave": "0.10",
   }
-}</pre>
-</div>
+}
+```
 
-Once this is included in your dependencies, and <strong class="py-1 px-2 bg-gray-100 rounded">npm install</strong> is ran, Pave will now be included in your project.
+Once this is included in your dependencies, and `npm install` is ran, Pave will now be included in your project.
 
 ### Build the Schema
 
 The cornerstore of any querying language is a rigid schema by which your project's models are well defined. This is what we'll build out in the following steps.
 
-The first step is to define your basic scalar types. We have attempted to make this easier by providing a package which includes a lot of the run-of-the-mill scalar types you will want for your project. This package can be included in your project in much the same way as Pave itself; <strong class="py-1 px-2 bg-gray-100 rounded">"pave-basic-types": "1"</strong>
+The first step is to define your basic scalar types. We have attempted to make this easier by providing a package which includes a lot of the run-of-the-mill scalar types you will want for your project. This package can be included in your project in much the same way as Pave itself; `"pave-basic-types": "1"`
 
 This package, when spread inside of your root schema file, as shown below, will provide these 8 basic types; string, int, date, datetime, time, number, object, boolean.
 
@@ -41,27 +40,27 @@ As far as these basic types go, it's up to you as to whether or not you selectiv
 
 #### All
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-import basicTypes from 'pave-basic-types';<br/>
+```js
+import basicTypes from 'pave-basic-types';
+
 export default {
   ...basicTypes,
   ...(other, custom, schema types)
-}</pre>
-</div>
+}
+```
 <br/>
 
 #### Selective
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-import { string, number, object } from 'pave-basic-types';<br/>
+```js
+import { string, number, object } from 'pave-basic-types';
+
 export default {
   string,
   number,
   object,
   ...(other, custom, schema types)
-}</pre>
-</div>
+}
+```
 
 

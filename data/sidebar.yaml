@@ -12,9 +12,9 @@
 
 - title: Schemas and Types
   content:
-    - title: Type System
-    - title: Type Language
-    - title: Object Types and Fields
+    - title: Structure
+    - title: Functions
+    - title: Model Types and Fields
     - title: Arguments
     - title: Scalar Types
     - title: Enumerable Types

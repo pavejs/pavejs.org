@@ -8,13 +8,14 @@ aliases:
 tableOfContents: true
 ---
 
-## [Some Header]
+## Basic Arguments
 
 Every querying language would be a hollow shell if not for the ability to provide arguments to the query. These properties are what can be read and resolved on the server side of your queried function.
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-<span class='text-green-500'>// Query fn createUser, with arguments</span>
+#### Example
+
+```js
+// Query createUser, with arguments
 query: {
   createUser: { 
     _args: { 
@@ -23,5 +24,27 @@ query: {
       emailAddress: 'jdoe@example.com'  
     }
   }
-}</pre>
-</div>
+}
+```
+<br><br>
+
+## Advanced Arguments
+
+While the example above is incredible rudimentary, there is massive potential to implement several advanced features off of the back of arguments. One could, as many using Pave have, implement standardized arguments such as sortBy, filterBy, which could then be handled in your resolver on your server. Below is an example of a more advanced Pave query, demonstrating the potential that Pave arguments can have at a higher level.
+
+#### Example
+
+```js
+// Query users, with arguments to filter and sort
+query: {
+  users: { 
+    _args: { 
+      filterBy: ['name', '!=', 'Jane Smith'],
+      sortBy: { field: 'name', order: 'desc' }
+    }
+    id: {},
+    name: {}
+  }
+}
+```
+<br><br>

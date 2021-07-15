@@ -22,25 +22,25 @@ The pave-basic-types package provides a out-of-the-box set of scalar types for j
 
 #### All
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-import basicTypes from 'pave-basic-types';<br/>
+```js
+import basicTypes from 'pave-basic-types';
+
 export default {
   ...basicTypes,
   ...(other, custom, schema types)
-}</pre>
-</div>
+}
+```
 <br/>
 
 #### Selective
 
-<div class="rounded border-2 border-gray-200 bg-gray-100 p-3 overflow-x-auto">
-<pre>
-import { string, number, object } from 'pave-basic-types';<br/>
+```js
+import { string, number, object } from 'pave-basic-types';
+
 export default {
   string,
   number,
   object,
   ...(other, custom, schema types)
-}</pre>
-</div>
+}
+```
