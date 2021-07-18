@@ -10,6 +10,16 @@ aliases:
 tableOfContents: true
 ---
 
+## Terminology
+
+Throughout this documentation, due to either a lack of words or just a limitation of my vocabulary, certain words are used interchangeably and in multiple contexts' to mean different things. Below will cover the use cases of each term (that I'm aware of).
+
+#### Field
+
+- Pave Fields --- Pave has a notion of types having fields, which are covered in [models and their properties](/docs/schemas-and-types/model-types-and-fields) as well as [querying specific fields](/docs/queries/fields).
+
+- Object fields --- Objects, which is the format that essentially every building block of a Pave schema or function are exported in, have certain fields on them, also called keys.
+
 ## The Basics
 
 Before any queries can be written, or schemas implemented, it is important to first get an understanding for Pave and it's underlying mechanisms, in order to be able to implement a system around it which works in synergy to take full advantage of Pave's features.

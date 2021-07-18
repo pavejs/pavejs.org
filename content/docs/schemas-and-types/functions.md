@@ -43,18 +43,50 @@ export default {
 
 **An expected return format of the function**
 
-This
+A type can be in two formats; a defined type from the schema, or an explicit definition of the available fields. The former is generally the correct way that you'll want to define a functions return type, but in the case of one-off functions that return a unique shape, you'll likely want to define a one-off return type and/or fields.
 
-#### Example
+#### Schema Type Example
 
 ```js
-// An update function of a user by ID
+// A function to query for details about a specific user
+export default {
+  args: { id: 'int' },
+  type: { nullable: 'user' }, // Will return a user model, unless there is no user with the provided ID
+  ...
+}
+```
+
+#### Explicit Example
+
+```js
+// A function which calls an outside API for weather data
 export default {
   args: { 
-    id: 'int', // A simple argument and type
-    name: { optional: 'string' }, // An optional field
-    description: { optional: { nullable: 'string' } } // An optional and nullable field
+    lat: { 
+      type: 'number',
+      typeArgs: { gte: -90, lte: 90 }
+    },
+    lng: { 
+      type: 'number',
+      typeArgs: { gte: -180, lte: 180 }
+    }
+  },
+  type: { 
+    nullable: { // Dictates that this function can return null, in the case of invalid lat/lng
+      fields: {
+        average: 'number',
+        high: 'number',
+        low: 'number'
+      }
+    }
   },
   ...
 }
 ```
+
+### Resolve
+
+**The actual function to process/get the arguments and return a value**
+
+As the summary and the name of the field indicate
+

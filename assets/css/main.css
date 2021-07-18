@@ -43,6 +43,20 @@
   .table-of-contents li {
     padding-bottom: 0.25rem;
   }
+
+  .docs-body {
+    width: auto;
+  }
+
+  .docs-body pre {
+    overflow-x: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .docs-body {
+      width: calc(100% - 12rem);
+    }
+  }
 }
 
 @layer components {
@@ -93,6 +107,7 @@ p code {
   padding: 0.25rem;
   font-size: smaller;
   border-radius: 0.25rem;
+  overflow-x: auto;
 }
 
 pre {

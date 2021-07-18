@@ -63,4 +63,10 @@ export default {
 }
 ```
 
+### Define Functions
+
+A schema without functions is like the day without the night, the land without the water. In order to make the schema matter, one must create root functions which 
+
+### Implement a Resolver 
+
 
