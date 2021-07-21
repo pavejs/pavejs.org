@@ -1,3 +1,13 @@
 {{ $built := resources.Get "js/index.js" | js.Build "main.js" }}
 
 <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'ed99e030d53e4d965c42623211b10cc3',
+        indexName: 'pavejs',
+        inputSelector: '#docs-search',
+        debug: true
+    });
+</script>

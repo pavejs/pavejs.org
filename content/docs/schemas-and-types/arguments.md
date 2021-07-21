@@ -12,10 +12,10 @@ tableOfContents: true
 
 Content
 
-### (Some arbitrary depth) Pave-core Available args
+<!-- ### (Some arbitrary depth) Pave-core Available args
 
-<!-- Word ^ that better -->
+Word ^ that better
 
 - defaultValue
 - nullable
-- optional
+- optional -->

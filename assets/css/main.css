@@ -120,3 +120,13 @@ pre {
 strong {
   font-weight: 600;
 }
+
+blockquote {
+  padding-bottom: 1rem;
+}
+
+blockquote p {
+  border-left: 2px solid gray;
+  font-weight: 200;
+  padding: 0 0 0 10px;
+}

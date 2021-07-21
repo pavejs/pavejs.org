@@ -16,7 +16,9 @@ While a `resolve` field on a scalar type schema object is all that's required, s
 
 ## Arguments (typeArgs)
 
-While less common, certain scalar types call for the provision of arguments to bound the potential values and support additional validation. A common case of this might be in an `enum` or `array` scalar type, where you might want to limit the maximum length of the array provided.
+While less common, certain scalar types call for the provision of arguments to bound the potential values and support additional validation. A common case of this might be in an `enum` or `array` type, where you might want to limit the maximum length of the array provided.
+
+> While enum and array are not technically scalar types, they're easier to visualize the purpose of typeArgs, so they're the example here
 
 With Pave, doing such a limitation is simple, and allowed for through this field.
 
