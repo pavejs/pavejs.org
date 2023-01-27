@@ -1,200 +1,31 @@
-<!doctype html><html class=h-full lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Get Pave setup in your environment in minutes">
-<meta name=author content="Casey Foster, Nathaniel Pendy">
-<meta name=generator content="Hugo 0.86.0">
-<meta name=docsearch:language content="en">
-<meta name=docsearch:version content="1.0">
-<title>Quick Start · PaveJS v1.0</title>
-<link rel=canonical href=https://pavejs.org/docs/getting-started/quick-start/>
-<link href=https://pavejs.org/css/main.min.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css>
-</head>
-<body class="bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none items-center">
-<header class="w-full bg-gray-100 shadow z-10">
-<div class="flex items-center max-w-screen-xl mx-auto space-x-8 px-6">
-<a href=/ class="font-bold text-lg">
-[Pave Logo]
-</a>
-<div class="flex-1 md:flex hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=/docs/getting-started/quick-start>Getting Started</a>
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=/docs>Documentation</a>
-<div class="flex space-x-2 text-gray-600 items-center pl-4">
-<img class="h-4 w-4" src=/svgs/search.svg>
+<!doctype html><html class=h-full lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Get Pave setup in your environment in minutes"><meta name=author content="Casey Foster, Nathaniel Pendy"><meta name=generator content="Hugo 0.110.0"><meta name=docsearch:language content="en"><meta name=docsearch:version content="1.0"><title>Quick Start · PaveJS v1.0</title><link rel=canonical href=https://pavejs.org/docs/getting-started/quick-start/><link href=https://pavejs.org/css/main.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css></head><body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none items-center'><header class='w-full bg-gray-100 shadow z-10'><div class='flex items-center max-w-screen-xl mx-auto space-x-8 px-6'><a href=/ class='font-bold text-lg'>[Pave Logo]</a><div class='flex-1 md:flex hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=/docs/getting-started/quick-start>Getting Started</a>
+<a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=/docs>Documentation</a><div class="flex space-x-2 text-gray-600 items-center pl-4"><img class="h-4 w-4" src=/svgs/search.svg>
 <input id=docs-search class="bg-gray-100 border-0 text-sm max-w-lg overflow-x-auto" placeholder="Search the docs...">
-<span class="text-xs bg-gray-200 rounded px-2 py-1 font-bold">Ctrl + /</span>
-</div>
-</div>
-<div class="flex-1 flex md:hidden"></div>
-<div class="flex md:hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-4" href=/docs>Docs</a>
-</div>
-<div class="lg:flex hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=https://www.npmjs.com/package/pave>
-npm
-</a>
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=https://www.github.com/caseywebdev/pave>
-github
-</a>
-</div>
-</div>
-</header>
-<div class="flex-1 flex flex-col p-safe w-full items-center">
-<div class="h-full flex-1 flex flex-col w-full max-w-screen-xl">
-<div class="w-full h-full flex flex-col-reverse lg:flex-row p-4 lg:space-x-5">
-<main class="flex flex-col lg:space-x-4 lg:flex-row lg:w-3/4">
-<div class="py-5 lg:py-0 lg:pb-5 text-gray-400 lg:w-48 p-4 space-y-2">
-<strong class="block text-lg pb-2 border-b">On this page</strong>
-<nav class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#5-minute-setup>5 Minute Setup</a>
-<ul>
-<li><a href=#installation>Installation</a></li>
-<li><a href=#build-the-schema>Build the Schema</a>
-<ul>
-<li><a href=#all>All</a></li>
-<li><a href=#selective>Selective</a></li>
-</ul>
-</li>
-<li><a href=#define-functions>Define Functions</a></li>
-<li><a href=#implement-a-resolver>Implement a Resolver</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</nav>
-</div>
-<div class="flex flex-col flex-1 space-y-2 docs-body">
-<span class="text-4xl font-bold">Quick Start</span>
-<p class="text-2xl font-light">Get Pave setup in your environment in minutes</p>
-<hr class=pt-2>
-<h2 id=5-minute-setup>5 Minute Setup</h2>
-<p>This guide will walk you through getting Pave setup and working in your project</p>
-<h3 id=installation>Installation</h3>
-<p>Getting pave setup and running your environment is easy and painless. Naturally, the first step of setup is to install Pave by declaring it in your package.json file in your project, as shown below.</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=c1>// In your projects package.json
-</span><span class=c1></span><span class=p>{</span>
-  <span class=p>...</span>
-  <span class=s2>&#34;dependencies&#34;</span><span class=o>:</span> <span class=p>{</span>
-    <span class=s2>&#34;pave&#34;</span><span class=o>:</span> <span class=s2>&#34;0.10&#34;</span><span class=p>,</span>
-  <span class=p>}</span>
-<span class=p>}</span>
-</code></pre></div><p>Once this is included in your dependencies, and <code>npm install</code> is ran, Pave will now be included in your project.</p>
-<h3 id=build-the-schema>Build the Schema</h3>
-<p>The cornerstore of any querying language is a rigid schema by which your project&rsquo;s models are well defined. This is what we&rsquo;ll build out in the following steps.</p>
-<p>The first step is to define your basic scalar types. We have attempted to make this easier by providing a package which includes a lot of the run-of-the-mill scalar types you will want for your project. This package can be included in your project in much the same way as Pave itself; <code>"pave-basic-types": "1"</code></p>
-<p>This package, when spread inside of your root schema file, as shown below, will provide these 8 basic types; string, int, date, datetime, time, number, object, boolean.</p>
-<p>As far as these basic types go, it&rsquo;s up to you as to whether or not you selectively pick and choose which types to use, or whether you just want to use all of them, examples of both are shown below.</p>
-<h4 id=all>All</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kr>import</span> <span class=nx>basicTypes</span> <span class=nx>from</span> <span class=s1>&#39;pave-basic-types&#39;</span><span class=p>;</span>
-
-<span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
-  <span class=p>...</span><span class=nx>basicTypes</span><span class=p>,</span>
-  <span class=p>...(</span><span class=nx>other</span><span class=p>,</span> <span class=nx>custom</span><span class=p>,</span> <span class=nx>schema</span> <span class=nx>types</span><span class=p>)</span>
-<span class=p>}</span>
-</code></pre></div><br>
-<h4 id=selective>Selective</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kr>import</span> <span class=p>{</span> <span class=nx>string</span><span class=p>,</span> <span class=nx>number</span><span class=p>,</span> <span class=nx>object</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;pave-basic-types&#39;</span><span class=p>;</span>
-
-<span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
-  <span class=nx>string</span><span class=p>,</span>
-  <span class=nx>number</span><span class=p>,</span>
-  <span class=nx>object</span><span class=p>,</span>
-  <span class=p>...(</span><span class=nx>other</span><span class=p>,</span> <span class=nx>custom</span><span class=p>,</span> <span class=nx>schema</span> <span class=nx>types</span><span class=p>)</span>
-<span class=p>}</span>
-</code></pre></div><h3 id=define-functions>Define Functions</h3>
-<p>A schema without functions is like the day without the night, the land without the water. In order to make the schema matter, one must create root functions which</p>
-<h3 id=implement-a-resolver>Implement a Resolver</h3>
-<div class=h-72></div>
-</div>
-</main>
-<aside class="lg:right-0 lg:sticky top-4 lg:w-1/4 h-min flex flex-col bg-gray-50 rounded shadow border border-gray-200">
-<nav class="w-full flex"><ul class="list-none w-full">
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Getting Started
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/getting-started/introduction/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Introduction
-</a></li>
-<li class="flex w-full"><a href=/docs/getting-started/quick-start/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs text-gray-900">
-Quick Start
-</a></li>
-</ul>
-</div>
-</li>
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Queries
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/queries/fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Fields
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Arguments
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/aliases/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Aliases
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/variables/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Variables
-</a></li>
-</ul>
-</div>
-</li>
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Schemas and Types
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/schemas-and-types/structure/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Structure
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/functions/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Functions
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/model-types-and-fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Model Types and Fields
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Arguments
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/scalar-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Scalar Types
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/enumerable-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Enumerable Types
-</a></li>
-</ul>
-</div>
-</li>
-<li class="py-1 mx-4 border-t"></li>
-<li class="flex w-full"><a href=/docs/extra-packages/ class="inline-flex flex-1 justify-between space-x-4 font-bold uppercase text-sm cursor-pointer hover:text-blue-600 hover:bg-gray-200 whitespace-nowrap p-3 text-blue-500">
-Extra Packages
-</a></li>
-</ul>
-</nav>
-</aside>
-</div></div>
-</div>
-<div class="w-full bg-gray-100 p-6">
-<div class="flex items-center justify-between max-w-screen-xl mx-auto space-x-8">
-<a href=/ class="font-bold text-lg">
-[Pave Logo]
-</a>
-<span>Code licensed <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://github.com/caseywebdev/pave/blob/main/LICENSE.txt>MIT</a>, docs <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a>.</span>
-</div>
-</div>
-<script type=text/javascript src=/main.js></script>
+<span class="text-xs bg-gray-200 rounded px-2 py-1 font-bold">Ctrl + /</span></div></div><div class='flex-1 flex md:hidden'></div><div class='flex md:hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-4' href=/docs>Docs</a></div><div class='lg:flex hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=https://www.npmjs.com/package/pave>npm</a>
+<a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=https://www.github.com/caseywebdev/pave>github</a></div></div></header><div class='flex-1 flex flex-col p-safe w-full items-center'><div class='h-full flex-1 flex flex-col w-full max-w-screen-xl'><div class='w-full h-full flex flex-col-reverse lg:flex-row p-4 lg:space-x-5'><main class="flex flex-col lg:space-x-4 lg:flex-row lg:w-3/4"><div class="py-5 lg:py-0 lg:pb-5 text-gray-400 lg:w-48 p-4 space-y-2"><strong class="block text-lg pb-2 border-b">On this page</strong><nav class=table-of-contents><nav id=TableOfContents><ul><li><a href=#5-minute-setup>5 Minute Setup</a><ul><li><a href=#installation>Installation</a></li><li><a href=#build-the-schema>Build the Schema</a><ul><li><a href=#all>All</a></li><li><a href=#selective>Selective</a></li></ul></li><li><a href=#define-functions>Define Functions</a></li><li><a href=#implement-a-resolver>Implement a Resolver</a></li></ul></li></ul></nav></nav></div><div class="flex flex-col flex-1 space-y-2 docs-body"><span class="text-4xl font-bold">Quick Start</span><p class="text-2xl font-light">Get Pave setup in your environment in minutes</p><hr class=pt-2><h2 id=5-minute-setup>5 Minute Setup</h2><p>This guide will walk you through getting Pave setup and working in your project</p><h3 id=installation>Installation</h3><p>Getting pave setup and running your environment is easy and painless. Naturally, the first step of setup is to install Pave by declaring it in your package.json file in your project, as shown below.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// In your projects package.json
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl>  <span class=s2>&#34;dependencies&#34;</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;pave&#34;</span><span class=o>:</span> <span class=s2>&#34;0.11&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Once this is included in your dependencies, and <code>npm install</code> is ran, Pave will now be included in your project.</p><h3 id=build-the-schema>Build the Schema</h3><p>The cornerstore of any querying language is a rigid schema by which your project&rsquo;s models are well defined. This is what we&rsquo;ll build out in the following steps.</p><p>The first step is to define your basic scalar types. We have attempted to make this easier by providing a package which includes a lot of the run-of-the-mill scalar types you will want for your project. This package can be included in your project in much the same way as Pave itself; <code>"pave-basic-types": "1"</code></p><p>This package, when spread inside of your root schema file, as shown below, will provide these 8 basic types; string, int, date, datetime, time, number, object, boolean.</p><p>As far as these basic types go, it&rsquo;s up to you as to whether or not you selectively pick and choose which types to use, or whether you just want to use all of them, examples of both are shown below.</p><h4 id=all>All</h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=nx>basicTypes</span> <span class=nx>from</span> <span class=s1>&#39;pave-basic-types&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span><span class=nx>basicTypes</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>...(</span><span class=nx>other</span><span class=p>,</span> <span class=nx>custom</span><span class=p>,</span> <span class=nx>schema</span> <span class=nx>types</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><br><h4 id=selective>Selective</h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=nx>basicTypes</span> <span class=nx>from</span> <span class=s1>&#39;pave-basic-types&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=p>{</span> <span class=nx>string</span><span class=p>,</span> <span class=nx>number</span><span class=p>,</span> <span class=nx>object</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>basicTypes</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>string</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>number</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>object</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>...(</span><span class=nx>other</span><span class=p>,</span> <span class=nx>custom</span><span class=p>,</span> <span class=nx>schema</span> <span class=nx>types</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h3 id=define-functions>Define Functions</h3><p>A schema without functions is like the day without the night, the land without the water. In order to make the schema matter, one must create root functions which</p><h3 id=implement-a-resolver>Implement a Resolver</h3><div class=h-72></div></div></main><aside class="lg:right-0 lg:sticky top-4 lg:w-1/4 h-min flex flex-col bg-gray-50 rounded shadow border border-gray-200"><nav class="w-full flex"><ul class="list-none w-full"><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Getting Started</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/getting-started/introduction/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Introduction</a></li><li class="flex w-full"><a href=/docs/getting-started/quick-start/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs text-gray-900">Quick Start</a></li></ul></div></li><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Queries</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/queries/fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Fields</a></li><li class="flex w-full"><a href=/docs/queries/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Arguments</a></li><li class="flex w-full"><a href=/docs/queries/aliases/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Aliases</a></li><li class="flex w-full"><a href=/docs/queries/variables/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Variables</a></li></ul></div></li><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Schemas and Types</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/schemas-and-types/structure/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Structure</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/functions/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Functions</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/model-types-and-fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Model Types and Fields</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Arguments</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/scalar-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Scalar Types</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/enumerable-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Enumerable Types</a></li></ul></div></li><li class="py-1 mx-4 border-t"></li><li class="flex w-full"><a href=/docs/extra-packages/ class="inline-flex flex-1 justify-between space-x-4 font-bold uppercase text-sm cursor-pointer hover:text-blue-600 hover:bg-gray-200 whitespace-nowrap p-3 text-blue-500">Extra Packages</a></li></ul></nav></aside></div></div></div><div class='w-full bg-gray-100 p-6'><div class='flex items-center justify-between max-w-screen-xl mx-auto space-x-8'><a href=/ class='font-bold text-lg'>[Pave Logo]</a>
+<span>Code licensed <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://github.com/caseywebdev/pave/blob/main/LICENSE.txt>MIT</a>, docs <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a>.</span></div></div><script type=text/javascript src=/main.js></script>
 <script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script>
-<script type=text/javascript>docsearch({apiKey:'ed99e030d53e4d965c42623211b10cc3',indexName:'pavejs',inputSelector:'#docs-search',debug:!1})</script>
-</body>
-</html>
+<script type=text/javascript>docsearch({apiKey:"ed99e030d53e4d965c42623211b10cc3",indexName:"pavejs",inputSelector:"#docs-search",debug:!1})</script></body></html>

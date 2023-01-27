@@ -1,155 +1,64 @@
-<!doctype html><html class=h-full lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Learn about the Pave Schema Arguments">
-<meta name=author content="Casey Foster, Nathaniel Pendy">
-<meta name=generator content="Hugo 0.86.0">
-<meta name=docsearch:language content="en">
-<meta name=docsearch:version content="1.0">
-<title>Arguments · PaveJS v1.0</title>
-<link rel=canonical href=https://pavejs.org/docs/schemas-and-types/arguments/>
-<link href=https://pavejs.org/css/main.min.css rel=stylesheet>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css>
-</head>
-<body class="bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none items-center">
-<header class="w-full bg-gray-100 shadow z-10">
-<div class="flex items-center max-w-screen-xl mx-auto space-x-8 px-6">
-<a href=/ class="font-bold text-lg">
-[Pave Logo]
-</a>
-<div class="flex-1 md:flex hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=/docs/getting-started/quick-start>Getting Started</a>
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=/docs>Documentation</a>
-<div class="flex space-x-2 text-gray-600 items-center pl-4">
-<img class="h-4 w-4" src=/svgs/search.svg>
+<!doctype html><html class=h-full lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Customize and santize values with custom arguments"><meta name=author content="Casey Foster, Nathaniel Pendy"><meta name=generator content="Hugo 0.110.0"><meta name=docsearch:language content="en"><meta name=docsearch:version content="1.0"><title>Arguments · PaveJS v1.0</title><link rel=canonical href=https://pavejs.org/docs/schemas-and-types/arguments/><link href=https://pavejs.org/css/main.min.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css></head><body class='bg-white text-gray-600 text-sm break-words h-full w-full flex flex-col overscroll-y-none items-center'><header class='w-full bg-gray-100 shadow z-10'><div class='flex items-center max-w-screen-xl mx-auto space-x-8 px-6'><a href=/ class='font-bold text-lg'>[Pave Logo]</a><div class='flex-1 md:flex hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=/docs/getting-started/quick-start>Getting Started</a>
+<a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=/docs>Documentation</a><div class="flex space-x-2 text-gray-600 items-center pl-4"><img class="h-4 w-4" src=/svgs/search.svg>
 <input id=docs-search class="bg-gray-100 border-0 text-sm max-w-lg overflow-x-auto" placeholder="Search the docs...">
-<span class="text-xs bg-gray-200 rounded px-2 py-1 font-bold">Ctrl + /</span>
-</div>
-</div>
-<div class="flex-1 flex md:hidden"></div>
-<div class="flex md:hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-4" href=/docs>Docs</a>
-</div>
-<div class="lg:flex hidden">
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=https://www.npmjs.com/package/pave>
-npm
-</a>
-<a class="uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6" href=https://www.github.com/caseywebdev/pave>
-github
-</a>
-</div>
-</div>
-</header>
-<div class="flex-1 flex flex-col p-safe w-full items-center">
-<div class="h-full flex-1 flex flex-col w-full max-w-screen-xl">
-<div class="w-full h-full flex flex-col-reverse lg:flex-row p-4 lg:space-x-5">
-<main class="flex flex-col lg:space-x-4 lg:flex-row lg:w-3/4">
-<div class="py-5 lg:py-0 lg:pb-5 text-gray-400 lg:w-48 p-4 space-y-2">
-<strong class="block text-lg pb-2 border-b">On this page</strong>
-<nav class=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#header>Header</a></li>
-</ul>
-</nav>
-</nav>
-</div>
-<div class="flex flex-col flex-1 space-y-2 docs-body">
-<span class="text-4xl font-bold">Arguments</span>
-<p class="text-2xl font-light">Learn about the Pave Schema Arguments</p>
-<hr class=pt-2>
-<h2 id=header>Header</h2>
-<p>Content</p>
-<blockquote>
-</blockquote>
-<div class=h-72></div>
-</div>
-</main>
-<aside class="lg:right-0 lg:sticky top-4 lg:w-1/4 h-min flex flex-col bg-gray-50 rounded shadow border border-gray-200">
-<nav class="w-full flex"><ul class="list-none w-full">
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Getting Started
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/getting-started/introduction/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Introduction
-</a></li>
-<li class="flex w-full"><a href=/docs/getting-started/quick-start/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Quick Start
-</a></li>
-</ul>
-</div>
-</li>
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Queries
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/queries/fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Fields
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Arguments
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/aliases/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Aliases
-</a></li>
-<li class="flex w-full"><a href=/docs/queries/variables/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Variables
-</a></li>
-</ul>
-</div>
-</li>
-<li class="flex flex-col w-full">
-<div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">
-Schemas and Types
-</div>
-<div lass="w-full flex">
-<ul class="list-none flex flex-1 flex-col text-base">
-<li class="flex w-full"><a href=/docs/schemas-and-types/structure/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Structure
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/functions/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Functions
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/model-types-and-fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Model Types and Fields
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs text-gray-900">
-Arguments
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/scalar-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Scalar Types
-</a></li>
-<li class="flex w-full"><a href=/docs/schemas-and-types/enumerable-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">
-Enumerable Types
-</a></li>
-</ul>
-</div>
-</li>
-<li class="py-1 mx-4 border-t"></li>
-<li class="flex w-full"><a href=/docs/extra-packages/ class="inline-flex flex-1 justify-between space-x-4 font-bold uppercase text-sm cursor-pointer hover:text-blue-600 hover:bg-gray-200 whitespace-nowrap p-3 text-blue-500">
-Extra Packages
-</a></li>
-</ul>
-</nav>
-</aside>
-</div></div>
-</div>
-<div class="w-full bg-gray-100 p-6">
-<div class="flex items-center justify-between max-w-screen-xl mx-auto space-x-8">
-<a href=/ class="font-bold text-lg">
-[Pave Logo]
-</a>
-<span>Code licensed <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://github.com/caseywebdev/pave/blob/main/LICENSE.txt>MIT</a>, docs <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a>.</span>
-</div>
-</div>
-<script type=text/javascript src=/main.js></script>
+<span class="text-xs bg-gray-200 rounded px-2 py-1 font-bold">Ctrl + /</span></div></div><div class='flex-1 flex md:hidden'></div><div class='flex md:hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-4' href=/docs>Docs</a></div><div class='lg:flex hidden'><a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=https://www.npmjs.com/package/pave>npm</a>
+<a class='uppercase text-gray-600 font-semibold text-sm cursor-pointer hover:text-gray-500 hover:bg-gray-200 p-6' href=https://www.github.com/caseywebdev/pave>github</a></div></div></header><div class='flex-1 flex flex-col p-safe w-full items-center'><div class='h-full flex-1 flex flex-col w-full max-w-screen-xl'><div class='w-full h-full flex flex-col-reverse lg:flex-row p-4 lg:space-x-5'><main class="flex flex-col lg:space-x-4 lg:flex-row lg:w-3/4"><div class="py-5 lg:py-0 lg:pb-5 text-gray-400 lg:w-48 p-4 space-y-2"><strong class="block text-lg pb-2 border-b">On this page</strong><nav class=table-of-contents><nav id=TableOfContents><ul><li><a href=#argument-modifiers>Argument Modifiers</a><ul><li><ul><li><a href=#examples>Examples</a></li></ul></li></ul></li><li><a href=#field-arguments>Field Arguments</a><ul><li><ul><li><a href=#example>Example</a></li></ul></li></ul></li><li><a href=#type-arguments>Type Arguments</a><ul><li><ul><li><a href=#example-1>Example</a></li><li><a href=#usage>Usage</a></li></ul></li></ul></li></ul></nav></nav></div><div class="flex flex-col flex-1 space-y-2 docs-body"><span class="text-4xl font-bold">Arguments</span><p class="text-2xl font-light">Customize and santize values with custom arguments</p><hr class=pt-2><h2 id=argument-modifiers>Argument Modifiers</h2><p>These arguments will reappear in your resolve fn, a separate field on the function, in the format you described. In this manner, you can also define args as optional and/or nullable, with an important distinction between the two.</p><ul><li><p>Optional (optional) &mdash; Arg can either not exist on query, or have a value.</p></li><li><p>Nullable (nullable) &mdash; Arg can not exist on the query, which will be interpretted as null, or have a value.</p></li><li><p>Default Value (defaultValue) &mdash; Arg will be given the specified default value if no value is passed. (This makes nullable redundant)</p></li></ul><p>The distinction between these two is that for things such as updating functions, where you want to make a distinction between somebody wanting to update a value to null, and not wanting to update it at all, you would want to declare that argument as both optional and nullable in order to cover all cases.</p><p>As implied above, these two modifiers are chainable to define an argument as both nullable and optional, which is particular useful for cases such as updating a user, where a field such as a user&rsquo;s bio can be updated to be empty (nullable), or not updated in that call at all (optional).</p><h4 id=examples>Examples</h4><p>Below, sticking with the common theme of a call to update a user, outlines how arguments can be specified using both optional and nullable.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// update-user.js (or something similar)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>args</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>username</span><span class=o>:</span> <span class=p>{</span> <span class=nx>optional</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span> <span class=p>}</span> <span class=c1>// username is optional, but if provided it must have a value
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>bio</span><span class=o>:</span> <span class=p>{</span> <span class=nx>optional</span><span class=o>:</span> <span class=p>{</span> <span class=nx>nullable</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span> <span class=p>}</span> <span class=p>}</span> <span class=c1>// bio is also optional, but can be passed the value null
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Below is an example of a use case for defaultValue, where the definition is of a create user function.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// create-user.js (or similar)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>args</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>username</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>receiveEmailNotifications</span><span class=o>:</span> <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;bool&#39;</span><span class=p>,</span> <span class=nx>defaultValue</span><span class=o>:</span> <span class=kc>true</span> <span class=p>}</span> <span class=c1>// Defaults the value to be true if arg isn&#39;t passed by caller
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=field-arguments>Field Arguments</h2><p>In most cases, you&rsquo;ll want to define arguments which are required to be passed when querying certain fields, particular create, update, or delete functions. This is handled through the <code>args</code> key on the field definitions.</p><h4 id=example>Example</h4><p>This is an example of an update field for an arbitrary &ldquo;user&rdquo; type, with arguments for each field that can be updated.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>args</span><span class=o>:</span> <span class=p>{</span> 
+</span></span><span class=line><span class=cl>    <span class=nx>username</span><span class=o>:</span> <span class=p>{</span> <span class=nx>optional</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=nx>emailAddress</span><span class=o>:</span> <span class=p>{</span> <span class=nx>optional</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=nx>password</span><span class=o>:</span> <span class=p>{</span> <span class=nx>optional</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>These arguments can then be accessed in the resolve function on this imaginary update field by destructuring the <code>args</code> prop, as shown below.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>...(</span><span class=nx>the</span> <span class=nx>args</span> <span class=nx>object</span> <span class=nx>shown</span> <span class=nx>above</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=nx>resolve</span><span class=o>:</span> <span class=p>({</span> <span class=nx>args</span><span class=o>:</span> <span class=p>{</span> <span class=nx>username</span><span class=p>,</span> <span class=nx>emailAddress</span><span class=p>,</span> <span class=nx>password</span> <span class=p>}</span> <span class=p>})</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// resolve here
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=type-arguments>Type Arguments</h2><p>In the same vein of all other aspects of Pave, schema types are extensible to accept custom arguments when queried. This functionality is achieved in the same manner that it is done on fields.</p><h4 id=example-1>Example</h4><p>Below is an example of a schema type which accepts a few arguments:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// Some string type definition, say defined in the schema as the type, &#34;string&#34;
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>args</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>maxLength</span><span class=o>:</span> <span class=p>{</span> <span class=nx>nullable</span><span class=o>:</span> <span class=s1>&#39;int&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=nx>minLength</span><span class=o>:</span> <span class=p>{</span> <span class=nx>nullable</span><span class=o>:</span> <span class=s1>&#39;int&#39;</span> <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nx>resolve</span><span class=o>:</span> <span class=p>({</span> <span class=nx>args</span><span class=o>:</span> <span class=p>{</span> <span class=nx>maxLength</span><span class=p>,</span> <span class=nx>minLength</span> <span class=p>},</span> <span class=nx>value</span> <span class=p>})</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>maxLength</span> <span class=o>&amp;&amp;</span> <span class=nx>value</span><span class=p>.</span><span class=nx>length</span> <span class=o>&gt;</span> <span class=nx>maxLength</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>throw</span> <span class=k>new</span> <span class=nb>Error</span><span class=p>(</span><span class=sb>`Expected string value to be shorter than </span><span class=si>${</span><span class=nx>maxLength</span><span class=si>}</span><span class=sb> characters.`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>minLength</span> <span class=o>&amp;&amp;</span> <span class=nx>value</span><span class=p>.</span><span class=nx>length</span> <span class=o>&lt;</span> <span class=nx>minLength</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>throw</span> <span class=k>new</span> <span class=nb>Error</span><span class=p>(</span><span class=sb>`Expected string value to be longer than </span><span class=si>${</span><span class=nx>minLength</span><span class=si>}</span><span class=sb> characters.`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h4 id=usage>Usage</h4><p>When referencing this type in other places, in order to use these arguments, you&rsquo;ll pass them in via the <code>typeArgs</code> key.</p><p>Below is an example of usage of the type described above, with usage of the <code>maxLength</code> and <code>minLength</code> arguments.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// Some root field to update a user, let&#39;s say
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=k>default</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>args</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>username</span><span class=o>:</span> <span class=p>{</span> 
+</span></span><span class=line><span class=cl>      <span class=nx>optional</span><span class=o>:</span> <span class=p>{</span> 
+</span></span><span class=line><span class=cl>        <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;string&#39;</span><span class=p>,</span> 
+</span></span><span class=line><span class=cl>        <span class=nx>typeArgs</span><span class=o>:</span> <span class=p>{</span> <span class=nx>minLength</span><span class=o>:</span> <span class=mi>10</span><span class=p>,</span> <span class=nx>maxLength</span><span class=o>:</span> <span class=mi>100</span> <span class=p>}</span> 
+</span></span><span class=line><span class=cl>      <span class=p>}</span> 
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=h-72></div></div></main><aside class="lg:right-0 lg:sticky top-4 lg:w-1/4 h-min flex flex-col bg-gray-50 rounded shadow border border-gray-200"><nav class="w-full flex"><ul class="list-none w-full"><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Getting Started</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/getting-started/introduction/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Introduction</a></li><li class="flex w-full"><a href=/docs/getting-started/quick-start/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Quick Start</a></li></ul></div></li><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Queries</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/queries/fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Fields</a></li><li class="flex w-full"><a href=/docs/queries/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Arguments</a></li><li class="flex w-full"><a href=/docs/queries/aliases/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Aliases</a></li><li class="flex w-full"><a href=/docs/queries/variables/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Variables</a></li></ul></div></li><li class="flex flex-col w-full"><div class="w-full inline-flex items-center flex-1 flex justify-between space-x-4 whitespace-nowrap p-2 text-blue-500 uppercase font-bold text-sm">Schemas and Types</div><div lass="w-full flex"><ul class="list-none flex flex-1 flex-col text-base"><li class="flex w-full"><a href=/docs/schemas-and-types/structure/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Structure</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/functions/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Functions</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/model-types-and-fields/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Model Types and Fields</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/arguments/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs text-gray-900">Arguments</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/scalar-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Scalar Types</a></li><li class="flex w-full"><a href=/docs/schemas-and-types/enumerable-types/ class="inline-flex flex-1 flex justify-between space-x-4 font-semibold text-sm cursor-pointer hover:text-gray-600 hover:bg-gray-200 whitespace-nowrap p-2 pl-6 text-gray-400 text-xs">Enumerable Types</a></li></ul></div></li><li class="py-1 mx-4 border-t"></li><li class="flex w-full"><a href=/docs/extra-packages/ class="inline-flex flex-1 justify-between space-x-4 font-bold uppercase text-sm cursor-pointer hover:text-blue-600 hover:bg-gray-200 whitespace-nowrap p-3 text-blue-500">Extra Packages</a></li></ul></nav></aside></div></div></div><div class='w-full bg-gray-100 p-6'><div class='flex items-center justify-between max-w-screen-xl mx-auto space-x-8'><a href=/ class='font-bold text-lg'>[Pave Logo]</a>
+<span>Code licensed <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://github.com/caseywebdev/pave/blob/main/LICENSE.txt>MIT</a>, docs <a class="font-semibold no-underline hover:underline hover:text-blue-500" href=https://creativecommons.org/licenses/by/4.0/>CC BY 4.0</a>.</span></div></div><script type=text/javascript src=/main.js></script>
 <script type=text/javascript src=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script>
-<script type=text/javascript>docsearch({apiKey:'ed99e030d53e4d965c42623211b10cc3',indexName:'pavejs',inputSelector:'#docs-search',debug:!1})</script>
-</body>
-</html>
+<script type=text/javascript>docsearch({apiKey:"ed99e030d53e4d965c42623211b10cc3",indexName:"pavejs",inputSelector:"#docs-search",debug:!1})</script></body></html>

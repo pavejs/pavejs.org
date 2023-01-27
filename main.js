@@ -8,12 +8,12 @@
       window.scrollTo(0, 0);
     };
     const BINDS = [
-      {keys: ["Control", "/"], fn: focusSearch}
+      { keys: ["Control", "/"], fn: focusSearch }
     ];
     window.onload = () => {
-      const pressedKeys = new Set();
-      const watchedKeys = BINDS.map(({keys}) => keys).flat();
-      const check = () => BINDS.map(({keys, fn}) => {
+      const pressedKeys = /* @__PURE__ */ new Set();
+      const watchedKeys = BINDS.map(({ keys }) => keys).flat();
+      const check = () => BINDS.map(({ keys, fn }) => {
         if (keys.length !== pressedKeys.size)
           return;
         if (!keys.every((key) => pressedKeys.has(key)))
