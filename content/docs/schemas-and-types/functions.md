@@ -16,6 +16,8 @@ All functions have a set of fields which are required by Pave in order to provid
 
 **A dictionary of key-value pairs following field:type structure**
 
+> This topic is covered in more detail [here](/docs/schemas-and-types/arguments)
+
 These arguments will reappear in your resolve fn, a separate field on the function, in the format you described. In this manner, you can also define args as optional or nullable, with an important distinction between the two.
 
 - Optional --- Arg can either not exist on query, or have a value.

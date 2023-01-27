@@ -35,7 +35,9 @@ export default {
 #### Selective
 
 ```js
-import { string, number, object } from 'pave-basic-types';
+import basicTypes from 'pave-basic-types';
+
+const { string, number, object } = basicTypes;
 
 export default {
   string,

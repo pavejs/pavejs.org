@@ -21,7 +21,7 @@ Getting pave setup and running your environment is easy and painless. Naturally,
 {
   ...
   "dependencies": {
-    "pave": "0.10",
+    "pave": "0.11",
   }
 }
 ```
@@ -53,7 +53,9 @@ export default {
 #### Selective
 
 ```js
-import { string, number, object } from 'pave-basic-types';
+import basicTypes from 'pave-basic-types';
+
+const { string, number, object } = basicTypes;
 
 export default {
   string,

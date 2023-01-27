@@ -1,24 +1,24 @@
 ---
 layout: docs
-title: Scalar Types
+title: Type Definitions
 description: The building blocks of queries and models
 group: schemas-and-types
 aliases:
-  - "/docs/schemas-and-types/scalar-types"
+  - "/docs/schemas-and-types/type-definitions"
 tableOfContents: true
 ---
 
 ## Overview
 
-All returned fields under models and even other types must be made up of basic scalar types. Scalar types are only required to possess a single field, `resolve`, which is applied to values assigned to that type to format, validate, or otherwise transform it to fit a normalized type.
+All returned fields under models and even other types must be made up of basic types. Types are only required to possess a single field, `resolve`, which is applied to values assigned to that type to format, validate, or otherwise transform it to fit a normalized type.
 
-While a `resolve` field on a scalar type schema object is all that's required, scalar types also support `typeArgs` which are arguments which can be passed to the resolve function for additional situational validation or transformation.
+While a `resolve` field on a type schema object is all that's required, types also support [args](/docs/schemas-and-types/arguments) which are arguments which can be passed to the resolve function for additional situational validation or transformation.
 
 ## Arguments (typeArgs)
 
-While less common, certain scalar types call for the provision of arguments to bound the potential values and support additional validation. A common case of this might be in an `enum` or `array` type, where you might want to limit the maximum length of the array provided.
+> This is covered in more detail on the arguments page, linked [here](/docs/schemas-and-types/arguments)
 
-> While enum and array are not technically scalar types, they're easier to visualize the purpose of typeArgs, so they're the example here
+While less common, certain types call for the provision of arguments to bound the potential values and support additional validation. A common case of this might be in an `enum` or `array` type, where you might want to limit the maximum length of the array provided.
 
 With Pave, doing such a limitation is simple, and allowed for through this field.
 
@@ -40,7 +40,7 @@ export default {
 
 ## Resolve
 
-Scalar types, being basic by nature, only contain within the `resolve` function the required transformations and validation necessary to verify a provided value as valid.
+Types, being basic by nature, only contain within the `resolve` function the required transformations and validation necessary to verify a provided value as valid.
 
 Below is a quick example, picked from the package [pave-basic-types](/docs/extra-packages/#pave-basic-types), which displays this validation and transformation.
 
@@ -68,9 +68,9 @@ export default {
 }
 ```
 
-While the boolean type coerces other values to a simple Boolean instance, this is just referenced as an example of a more involved scalar type, that both validates, and transforms a variety of values to a normalized and consistent instance/type/value.
+While the boolean type coerces other values to a simple Boolean instance, this is just referenced as an example of a more involved type, that both validates, and transforms a variety of values to a normalized and consistent instance/type/value.
 
-As a secondary example, of a more basic (and more common) scalar type resolve, here's the validation for a `time` type from the same package referenced earlier.
+As a secondary example, of a more basic (and more common) type resolve, here's the validation for a `time` type from the same package referenced earlier.
 
 #### Example 2
 
@@ -87,4 +87,4 @@ export default {
 }
 ```
 
-This example displays the more common function of the resolve function on scalar types, which is simply validation.
+This example displays the more common function of the resolve function on types, which is simply validation.
