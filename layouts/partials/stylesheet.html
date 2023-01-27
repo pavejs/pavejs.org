@@ -1,8 +1,8 @@
 {{ $styles := resources.Get "css/main.css" }} 
 {{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }} 
 
-{{ if eq hugo.Environment "production" }}
+<!-- {{ if eq hugo.Environment "production" }}
   {{ $styles = $styles | minify }} 
-{{ end }}
+{{ end }} -->
 
 <link href="{{ $styles.Permalink }}" rel="stylesheet" />
